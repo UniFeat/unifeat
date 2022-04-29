@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>io.github.unifeat</groupId>
+    <artifactId>UniFeat</artifactId>
+    <version>0.1.0</version><!-- UniFeat-version -->
+    <packaging>jar</packaging>
+    
+    <name>UniFeat</name>
+    <description>The Universal Feature Selection Tool (UniFeat), an open-source tool for 
+        performing feature selection process. This is the first version of the tool.
+    </description>
+    <url>https://unifeat.github.io/</url>
+    <organization>
+        <name>University of Kurdistan, IR</name>
+        <url>https://international.uok.ac.ir/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+  
+    <developers>
+        <developer>
+            <id>unifeatteam</id>
+            <name>The UniFeat Team</name>
+            <url>https://unifeat.github.io/people.html</url>
+        </developer>
+    </developers>
+  
+    <dependencies>
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-stable</artifactId>
+            <version>3.8.6</version>
+        </dependency>
+    </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <exec.mainClass>unifeat.gui.ProjectPath</exec.mainClass>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+            <!-- Build an executable JAR -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.2</version>
+            <configuration>
+                <archive>
+                <manifest>
+                    <addClasspath>true</addClasspath>
+                    <mainClass>unifeat.gui.ProjectPath</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>${project.build.sourceDirectory}</directory>
+                <includes>
+                    <include>**/*.png</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>
