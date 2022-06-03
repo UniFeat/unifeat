@@ -190,7 +190,7 @@ public class DiagramPanel extends JPanel implements ActionListener, MouseMotionL
         f.add(this);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.setIconImage(new ImageIcon(getClass().getResource("/unifeat/gui/icons/small_logo.png")).getImage());
-        f.setSize(530, 370);
+        f.setSize(530, 380);
         f.addMouseMotionListener(this);
         f.setLocationRelativeTo(null);
         f.setResizable(false);

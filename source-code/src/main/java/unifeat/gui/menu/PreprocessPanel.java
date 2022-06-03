@@ -75,7 +75,7 @@ public class PreprocessPanel extends JFrame
         panel_about.setBounds(10, 30, 465, 60);
         panel_about.setLayout(null);
         panel_about.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "About"));
-        lbl_about = new JLabel("This screen lets you prepare the dataset in the unifeat format.");
+        lbl_about = new JLabel("This screen lets you prepare the dataset in the UniFeat format.");
         lbl_about.setBounds(15, 2, 455, 60);
 
         panel_about.add(lbl_about);
