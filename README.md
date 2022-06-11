@@ -7,9 +7,12 @@
  ----
 [![GitHub stars](https://img.shields.io/github/stars/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/network)
+![GitHub all releases](https://img.shields.io/github/downloads/UniFeat/unifeat/total?color=blue)
 [![GitHub license](https://img.shields.io/github/license/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/blob/main/LICENSE)
 
-# Universal Feature Selection Tool (UniFeat)
+[**User Manual**](https://unifeat.github.io/docs/user_manual_v1.0.pdf) |
+[**JavaDoc**](https://unifeat.github.io/docs/java-docs/v0.1.0/index.html) 
+
 The **Uni**versal **Feat**ure Selection Tool (UniFeat) is an open-source tool developed entirely in Java for performing feature selection process in different areas of research. The project aims to create a unified framework for researchers applying feature selection.
 
 UniFeat provides a set of well-known and state-of-the-art feature selection methods within the essential auxiliary tools, including performance evaluation criteria, visual displays, statistical analysis, and reduced datasets to compare the performance of feature selection methods.
