@@ -7,7 +7,6 @@
  ----
 [![GitHub stars](https://img.shields.io/github/stars/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/network)
-![GitHub all releases](https://img.shields.io/github/downloads/UniFeat/unifeat/total?color=blue)
 [![GitHub license](https://img.shields.io/github/license/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/blob/main/LICENSE)
 
 [**User Manual**](https://unifeat.github.io/docs/user_manual_v1.0.pdf) |
