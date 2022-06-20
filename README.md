@@ -73,4 +73,4 @@ In UniFeat, you can simply access to the well-known and state-of-the-art feature
 More information is available at the [UniFeat Homepage](https://unifeat.github.io/).
 
 ## License
-UniFeat is implemented and developed principally at the [University of Kurdistan](https://international.uok.ac.ir/en/), Sanandaj, Iran, and distributed under the [MIT License](https://opensource.org/licenses/MIT) terms.
+UniFeat is implemented and developed principally at the [University of Kurdistan](https://international.uok.ac.ir/en/), Sanandaj, Iran, and distributed under the [MIT License](https://github.com/UniFeat/unifeat/blob/main/LICENSE) terms.
