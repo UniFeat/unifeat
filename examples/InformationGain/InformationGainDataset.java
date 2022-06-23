@@ -1,19 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package FilterTest;
 
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.filter.supervised.InformationGain;
 import unifeat.util.FileFunc;
 
-public class InfoGainTrainTest {
+public class InformationGainDataset {
 
     public static void main(String[] args) {
         //reading the datasets files
         DatasetInfo data = new DatasetInfo();
-        data.preProcessing("data/trainSet.csv", "data/testSet.csv", "data/classLabels.txt");
+        data.preProcessing("data/dataset.csv", "data/classLabels.txt");
 
         //printing some information of the dataset
         int sizeSelectedFeatureSubset = 2;
