@@ -1,4 +1,4 @@
-package FilterTest;
+package SymmetricalUncertainty;
 
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.filter.supervised.SymmetricalUncertainty;

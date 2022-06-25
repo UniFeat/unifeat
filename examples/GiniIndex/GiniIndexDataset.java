@@ -1,4 +1,4 @@
-package FilterTest;
+package GiniIndex;
 
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.filter.supervised.GiniIndex;

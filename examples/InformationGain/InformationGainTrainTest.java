@@ -1,4 +1,4 @@
-package FilterTest;
+package InformationGain;
 
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.filter.supervised.InformationGain;
