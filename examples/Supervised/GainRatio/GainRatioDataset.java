@@ -1,4 +1,4 @@
-package GainRatio;
+package Supervised.GainRatio;
 
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.filter.supervised.GainRatio;

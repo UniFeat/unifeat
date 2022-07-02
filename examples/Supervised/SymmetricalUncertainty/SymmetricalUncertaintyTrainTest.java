@@ -1,10 +1,10 @@
-package GiniIndex;
+package Supervised.SymmetricalUncertainty;
 
 import unifeat.dataset.DatasetInfo;
-import unifeat.featureSelection.filter.supervised.GiniIndex;
+import unifeat.featureSelection.filter.supervised.SymmetricalUncertainty;
 import unifeat.util.FileFunc;
 
-public class GiniIndexTrainTest {
+public class SymmetricalUncertaintyTrainTest {
 
     public static void main(String[] args) {
         //reading the datasets files
@@ -19,8 +19,8 @@ public class GiniIndexTrainTest {
                 + "\n no. of features : " + data.getNumFeature()
                 + "\n no. of classes : " + data.getNumClass());
 
-        //performing the feature selection by gini index method
-        GiniIndex method = new GiniIndex(sizeSelectedFeatureSubset);
+        //performing the feature selection by symmetrical uncertainty method
+        SymmetricalUncertainty method = new SymmetricalUncertainty(sizeSelectedFeatureSubset);
         method.loadDataSet(data);
 
         String message = method.validate();
@@ -30,7 +30,7 @@ public class GiniIndexTrainTest {
         } else {
             method.evaluateFeatures();
             int[] subset = method.getSelectedFeatureSubset();
-            double[] giniIndexValues = method.getFeatureValues();
+            double[] symUncertaintyValues = method.getFeatureValues();
 
             //printing the subset of selected features
             System.out.print("\n subset of selected features: ");
@@ -38,10 +38,10 @@ public class GiniIndexTrainTest {
                 System.out.print((subset[i] + 1) + "  ");
             }
 
-            //printing the gini index values
-            System.out.println("\n\n gini index values: ");
-            for (int i = 0; i < giniIndexValues.length; i++) {
-                System.out.println(" " + (i + 1) + " : " + giniIndexValues[i]);
+            //printing the symmetrical uncertainty values
+            System.out.println("\n\n symmetrical uncertainty values: ");
+            for (int i = 0; i < symUncertaintyValues.length; i++) {
+                System.out.println(" " + (i + 1) + " : " + symUncertaintyValues[i]);
             }
 
             //creating reduced datasets as the CSV file format
@@ -54,3 +54,4 @@ public class GiniIndexTrainTest {
         }
     }
 }
+

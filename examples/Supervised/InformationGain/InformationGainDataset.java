@@ -1,15 +1,15 @@
-package SymmetricalUncertainty;
+package Supervised.InformationGain;
 
 import unifeat.dataset.DatasetInfo;
-import unifeat.featureSelection.filter.supervised.SymmetricalUncertainty;
+import unifeat.featureSelection.filter.supervised.InformationGain;
 import unifeat.util.FileFunc;
 
-public class SymmetricalUncertaintyTrainTest {
+public class InformationGainDataset {
 
     public static void main(String[] args) {
         //reading the datasets files
         DatasetInfo data = new DatasetInfo();
-        data.preProcessing("data/trainSet.csv", "data/testSet.csv", "data/classLabels.txt");
+        data.preProcessing("data/dataset.csv", "data/classLabels.txt");
 
         //printing some information of the dataset
         int sizeSelectedFeatureSubset = 2;
@@ -19,8 +19,8 @@ public class SymmetricalUncertaintyTrainTest {
                 + "\n no. of features : " + data.getNumFeature()
                 + "\n no. of classes : " + data.getNumClass());
 
-        //performing the feature selection by symmetrical uncertainty method
-        SymmetricalUncertainty method = new SymmetricalUncertainty(sizeSelectedFeatureSubset);
+        //performing the feature selection by information gain method
+        InformationGain method = new InformationGain(sizeSelectedFeatureSubset);
         method.loadDataSet(data);
 
         String message = method.validate();
@@ -30,7 +30,7 @@ public class SymmetricalUncertaintyTrainTest {
         } else {
             method.evaluateFeatures();
             int[] subset = method.getSelectedFeatureSubset();
-            double[] symUncertaintyValues = method.getFeatureValues();
+            double[] infoGainValues = method.getFeatureValues();
 
             //printing the subset of selected features
             System.out.print("\n subset of selected features: ");
@@ -38,10 +38,10 @@ public class SymmetricalUncertaintyTrainTest {
                 System.out.print((subset[i] + 1) + "  ");
             }
 
-            //printing the symmetrical uncertainty values
-            System.out.println("\n\n symmetrical uncertainty values: ");
-            for (int i = 0; i < symUncertaintyValues.length; i++) {
-                System.out.println(" " + (i + 1) + " : " + symUncertaintyValues[i]);
+            //printing the information gain values
+            System.out.println("\n\n information gain values: ");
+            for (int i = 0; i < infoGainValues.length; i++) {
+                System.out.println(" " + (i + 1) + " : " + infoGainValues[i]);
             }
 
             //creating reduced datasets as the CSV file format
@@ -54,4 +54,3 @@ public class SymmetricalUncertaintyTrainTest {
         }
     }
 }
-

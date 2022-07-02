@@ -1,15 +1,15 @@
-package FisherScore;
+package Supervised.SymmetricalUncertainty;
 
 import unifeat.dataset.DatasetInfo;
-import unifeat.featureSelection.filter.supervised.FisherScore;
+import unifeat.featureSelection.filter.supervised.SymmetricalUncertainty;
 import unifeat.util.FileFunc;
 
-public class FisherScoreTrainTest {
+public class SymmetricalUncertaintyDataset {
 
     public static void main(String[] args) {
         //reading the datasets files
         DatasetInfo data = new DatasetInfo();
-        data.preProcessing("data/trainSet.csv", "data/testSet.csv", "data/classLabels.txt");
+        data.preProcessing("data/dataset.csv", "data/classLabels.txt");
 
         //printing some information of the dataset
         int sizeSelectedFeatureSubset = 2;
@@ -19,8 +19,8 @@ public class FisherScoreTrainTest {
                 + "\n no. of features : " + data.getNumFeature()
                 + "\n no. of classes : " + data.getNumClass());
 
-        //performing the feature selection by fisher score method
-        FisherScore method = new FisherScore(sizeSelectedFeatureSubset);
+        //performing the feature selection by symmetrical uncertainty method
+        SymmetricalUncertainty method = new SymmetricalUncertainty(sizeSelectedFeatureSubset);
         method.loadDataSet(data);
 
         String message = method.validate();
@@ -30,7 +30,7 @@ public class FisherScoreTrainTest {
         } else {
             method.evaluateFeatures();
             int[] subset = method.getSelectedFeatureSubset();
-            double[] fisherScoreValues = method.getFeatureValues();
+            double[] symUncertaintyValues = method.getFeatureValues();
 
             //printing the subset of selected features
             System.out.print("\n subset of selected features: ");
@@ -38,10 +38,10 @@ public class FisherScoreTrainTest {
                 System.out.print((subset[i] + 1) + "  ");
             }
 
-            //printing the fisher score values
-            System.out.println("\n\n fisher score values: ");
-            for (int i = 0; i < fisherScoreValues.length; i++) {
-                System.out.println(" " + (i + 1) + " : " + fisherScoreValues[i]);
+            //printing the symmetrical uncertainty values
+            System.out.println("\n\n symmetrical uncertainty values: ");
+            for (int i = 0; i < symUncertaintyValues.length; i++) {
+                System.out.println(" " + (i + 1) + " : " + symUncertaintyValues[i]);
             }
 
             //creating reduced datasets as the CSV file format

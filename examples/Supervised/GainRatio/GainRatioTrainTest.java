@@ -1,10 +1,10 @@
-package MRMR;
+package Supervised.GainRatio;
 
 import unifeat.dataset.DatasetInfo;
-import unifeat.featureSelection.filter.supervised.MRMR;
+import unifeat.featureSelection.filter.supervised.GainRatio;
 import unifeat.util.FileFunc;
 
-public class MRMRTrainTest {
+public class GainRatioTrainTest {
 
     public static void main(String[] args) {
         //reading the datasets files
@@ -19,8 +19,8 @@ public class MRMRTrainTest {
                 + "\n no. of features : " + data.getNumFeature()
                 + "\n no. of classes : " + data.getNumClass());
 
-        //performing the feature selection by minimal-redundancy-maximal-relevance method
-        MRMR method = new MRMR(sizeSelectedFeatureSubset);
+        //performing the feature selection by information gain method
+        GainRatio method = new GainRatio(sizeSelectedFeatureSubset);
         method.loadDataSet(data);
 
         String message = method.validate();
@@ -30,11 +30,18 @@ public class MRMRTrainTest {
         } else {
             method.evaluateFeatures();
             int[] subset = method.getSelectedFeatureSubset();
+            double[] gainRatioValues = method.getFeatureValues();
 
             //printing the subset of selected features
             System.out.print("\n subset of selected features: ");
             for (int i = 0; i < subset.length; i++) {
                 System.out.print((subset[i] + 1) + "  ");
+            }
+
+            //printing the gain ratio values
+            System.out.println("\n\n gain ratio values: ");
+            for (int i = 0; i < gainRatioValues.length; i++) {
+                System.out.println(" " + (i + 1) + " : " + gainRatioValues[i]);
             }
 
             //creating reduced datasets as the CSV file format
@@ -47,4 +54,3 @@ public class MRMRTrainTest {
         }
     }
 }
-
