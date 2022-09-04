@@ -2851,32 +2851,40 @@ public class MainPanel extends JPanel {
          */
         @Override
         public void run() {
+            
+            try {
+                if (runCode == 0) {
+                    if (WeightedFilterType.isWeightedFilterMethod(cb_supervised.getSelectedItem().toString())
+                            || WeightedFilterType.isWeightedFilterMethod(cb_unsupervised.getSelectedItem().toString())) {
 
-            if (runCode == 0) {
-                if (WeightedFilterType.isWeightedFilterMethod(cb_supervised.getSelectedItem().toString())
-                        || WeightedFilterType.isWeightedFilterMethod(cb_unsupervised.getSelectedItem().toString())) {
+                        boolean isSupervised = !cb_supervised.getSelectedItem().equals(FilterType.NONE.toString());
+                        FilterType type = isSupervised ? FilterType.parse(cb_supervised.getSelectedItem().toString())
+                                : FilterType.parse(cb_unsupervised.getSelectedItem().toString());
 
-                    boolean isSupervised = !cb_supervised.getSelectedItem().equals(FilterType.NONE.toString());
-                    FilterType type = isSupervised ? FilterType.parse(cb_supervised.getSelectedItem().toString())
-                            : FilterType.parse(cb_unsupervised.getSelectedItem().toString());
+                        weightedFilterApproachPerform(type, isSupervised);
+                    } else if (NonWeightedFilterType.isNonWeightedFilterMethod(cb_supervised.getSelectedItem().toString())
+                            || NonWeightedFilterType.isNonWeightedFilterMethod(cb_unsupervised.getSelectedItem().toString())) {
 
-                    weightedFilterApproachPerform(type, isSupervised);
-                } else if (NonWeightedFilterType.isNonWeightedFilterMethod(cb_supervised.getSelectedItem().toString())
-                        || NonWeightedFilterType.isNonWeightedFilterMethod(cb_unsupervised.getSelectedItem().toString())) {
+                        boolean isSupervised = !cb_supervised.getSelectedItem().equals(FilterType.NONE.toString());
+                        FilterType type = isSupervised ? FilterType.parse(cb_supervised.getSelectedItem().toString())
+                                : FilterType.parse(cb_unsupervised.getSelectedItem().toString());
 
-                    boolean isSupervised = !cb_supervised.getSelectedItem().equals(FilterType.NONE.toString());
-                    FilterType type = isSupervised ? FilterType.parse(cb_supervised.getSelectedItem().toString())
-                            : FilterType.parse(cb_unsupervised.getSelectedItem().toString());
-
-                    filterApproachPerform(type, isSupervised);
-                } else if (WrapperType.isWrapperMethod(cb_wrapper.getSelectedItem().toString())) {
-                    wrapperApproachPerform(WrapperType.parse(cb_wrapper.getSelectedItem().toString()));
-                } else if (EmbeddedType.isEmbeddedMethod(cb_embedded.getSelectedItem().toString())) {
-                    embeddedApproachPerform(EmbeddedType.parse(cb_embedded.getSelectedItem().toString()));
-                } else if (HybridType.isHybridMethod(cb_hybrid.getSelectedItem().toString())) {
-                    hybridApproachPerform(HybridType.parse(cb_hybrid.getSelectedItem().toString()));
+                        filterApproachPerform(type, isSupervised);
+                    } else if (WrapperType.isWrapperMethod(cb_wrapper.getSelectedItem().toString())) {
+                        wrapperApproachPerform(WrapperType.parse(cb_wrapper.getSelectedItem().toString()));
+                    } else if (EmbeddedType.isEmbeddedMethod(cb_embedded.getSelectedItem().toString())) {
+                        embeddedApproachPerform(EmbeddedType.parse(cb_embedded.getSelectedItem().toString()));
+                    } else if (HybridType.isHybridMethod(cb_hybrid.getSelectedItem().toString())) {
+                        hybridApproachPerform(HybridType.parse(cb_hybrid.getSelectedItem().toString()));
+                    }
                 }
             }
+            catch(Exception e) {
+                JOptionPane.showMessageDialog(null, """
+                                                    An error arose in performing the feature selection method. It may occur to incorrect parameter values.
+                                                    Please close the window, re-check the parameters' values, and re-run the algorithm.""", 
+                                            "Error", JOptionPane.ERROR_MESSAGE);
+            }    
         }
     }
 

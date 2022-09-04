@@ -27,11 +27,14 @@ import unifeat.util.FileFunc;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -146,8 +149,13 @@ public class ProjectPath extends JFrame implements ActionListener {
      *
      * @param args an array of String objects for supplying command-line 
      * arguments
+     * 
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        Handler globalExceptionHandler = new Handler();
+        Thread.setDefaultUncaughtExceptionHandler(globalExceptionHandler);
+
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
@@ -160,3 +168,28 @@ public class ProjectPath extends JFrame implements ActionListener {
         });
     }
 }
+
+/**
+ * This java class is used to global exception handling in the program.
+ * 
+ * @author Sina Tabakhi
+ */
+class Handler implements Thread.UncaughtExceptionHandler {
+    
+    /**
+     * This method handles uncaught exceptions.
+     *
+     * @param t the main thread of the program 
+     * @param e the unhandled exception
+     */
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        JOptionPane.showMessageDialog(null, "An error occurred in running the program. Please report the error to the developer team.", 
+                                    "Error", JOptionPane.ERROR_MESSAGE);
+
+        Logger.getLogger(Handler.class.getName()).log(Level.SEVERE, 
+                "An error occurred in running the program. Please report the error to the developer team.", 
+                e);
+    }
+}
+
