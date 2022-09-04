@@ -39,28 +39,58 @@
             <version>3.8.6</version>
         </dependency>
     </dependencies>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>unifeat.gui.ProjectPath</exec.mainClass>
+        <project.jardir>${project.basedir}/jar-files</project.jardir>
     </properties>
+    
     <build>
         <plugins>
             <plugin>
-            <!-- Build an executable JAR -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.2.2</version>
-            <configuration>
-                <archive>
-                <manifest>
-                    <addClasspath>true</addClasspath>
-                    <mainClass>unifeat.gui.ProjectPath</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>unifeat.gui.ProjectPath</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>unifeat.gui.ProjectPath</mainClass>
+                                </transformer>
+                            </transformers>
+                            <finalName>${project.name}-v${project.version}</finalName>  
+                            <outputDirectory>
+                                ${project.jardir}
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
         <resources>
             <resource>
