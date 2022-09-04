@@ -111,4 +111,15 @@ public class OptimalACO extends BasicACO<Colony> {
 //        }
         Colony.fitnessEvaluator.deleteTempDirectory();
     }
+    
+    /**
+     * {@inheritDoc }
+     */
+    @Override
+    public String validate() {
+        if (colony.getColonySize() > numFeatures) {
+            return "The parameter values of Optimal ACO (number of ants in the colony) are incorrect.";
+        }
+        return "";
+    }
 }

@@ -231,4 +231,13 @@ public class Colony extends BasicColony<Ant> {
 //        System.out.println(colony[fittestIndex].toString());
         return colony[fittestIndex];
     }
+    
+    /**
+     * This method returns the size of the colony.
+     *
+     * @return the number of ants in the colony
+     */
+    public int getColonySize() {
+        return COLONY_SIZE;
+    }
 }
