@@ -107,6 +107,7 @@ import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import java.awt.Desktop;
 import java.awt.Rectangle;
+import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.swing.ImageIcon;
@@ -211,10 +212,10 @@ public class MainPanel extends JPanel {
         setLayout(null);
 
         /////////////////// set the path files ////////////////////////////////
-        PATH_PROJECT = path + "\\";
-        PATH_DATA_CSV = PATH_PROJECT + "CSV\\";
-        PATH_DATA_ARFF = PATH_PROJECT + "ARFF\\";
-
+        PATH_PROJECT = path + File.separator;
+        PATH_DATA_CSV = PATH_PROJECT + "CSV" + File.separator;
+        PATH_DATA_ARFF = PATH_PROJECT + "ARFF" + File.separator;
+ 
         /////////////////////// "File Paths" panel ////////////////////////////
         panel_filePath = new JPanel();
         panel_filePath.setBounds(10, 15, 825, 210);
@@ -2881,7 +2882,7 @@ public class MainPanel extends JPanel {
             }
             catch(Exception e) {
                 JOptionPane.showMessageDialog(null, """
-                                                    An error arose in performing the feature selection method. It may occur to incorrect parameter values.
+                                                    An error arose in performing the feature selection method. It may occur to incorrect parameter values or an error in the feature selection process.
                                                     Please close the window, re-check the parameters' values, and re-run the algorithm.""", 
                                             "Error", JOptionPane.ERROR_MESSAGE);
             }    

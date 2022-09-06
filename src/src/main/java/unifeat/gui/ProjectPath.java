@@ -27,6 +27,7 @@ import unifeat.util.FileFunc;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -54,12 +55,14 @@ public class ProjectPath extends JFrame implements ActionListener {
     JTextField txt_path;
     String path = "";
     JPanel mainPanel;
+    private static final String PATH_ICON = "/unifeat/gui/icons/";
 
     /**
      * Creates new form ProjectPath. This method is called from within the
      * constructor to initialize the form.
      */
     public ProjectPath() {
+        String smallLogoPath = PATH_ICON + "small_logo.png";
         mainPanel = new JPanel();
         mainPanel.setLayout(null);
 
@@ -90,7 +93,7 @@ public class ProjectPath extends JFrame implements ActionListener {
         mainPanel.add(txt_path);
 
         this.setTitle("Workspase Selection");
-        this.setIconImage(new ImageIcon(getClass().getResource("/unifeat/gui/icons/small_logo.png")).getImage());
+        this.setIconImage(new ImageIcon(getClass().getResource(smallLogoPath)).getImage());
         this.setSize(350, 190);
         this.setLocationRelativeTo(null);
         this.add(mainPanel);
@@ -136,8 +139,8 @@ public class ProjectPath extends JFrame implements ActionListener {
      */
     private void btn_selectActionPerformed(ActionEvent e) {
         //creates the two folder (CSV - ARFF)in the selected path
-        FileFunc.createDirectory(path + "\\CSV\\");
-        FileFunc.createDirectory(path + "\\ARFF\\");
+        FileFunc.createDirectory(Paths.get(path, "CSV").toString());
+        FileFunc.createDirectory(Paths.get(path, "ARFF").toString());
 
         MainPanel ui = new MainPanel(path);
         ui.createAndShow();

@@ -30,6 +30,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -170,7 +171,7 @@ public class ResultPanel extends JPanel implements ActionListener {
         if (jfch.showSaveDialog(btn_saveRes) == JFileChooser.APPROVE_OPTION) {
             PrintWriter pw = null;
             try {
-                pw = new PrintWriter(new FileWriter(jfch.getSelectedFile().getPath() + "\\ResultFile.txt"));
+                pw = new PrintWriter(new FileWriter(Paths.get(jfch.getSelectedFile().getPath() , "ResultFile.txt").toString()));
                 pw.println(txtArea_main.getText());
                 pw.close();
             } catch (IOException ex) {

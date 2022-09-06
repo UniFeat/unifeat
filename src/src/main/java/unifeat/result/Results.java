@@ -23,6 +23,7 @@
  */
 package unifeat.result;
 
+import java.io.File;
 import unifeat.classifier.ClassifierType;
 import unifeat.classifier.evaluation.wekaClassifier.TrainTestEvaluation;
 import unifeat.dataset.DatasetInfo;
@@ -48,9 +49,9 @@ import java.util.logging.Logger;
 public class Results {
 
     DatasetInfo data;
-    private String PATH_PROJECT;
-    private String PATH_DATA_CSV;
-    private String PATH_DATA_ARFF;
+    private final String PATH_PROJECT;
+    private final String PATH_DATA_CSV;
+    private final String PATH_DATA_ARFF;
     private int numRuns;
     private int numSelectedSubsets;
     private String[][] selectedFeatureSubsets;
@@ -80,8 +81,8 @@ public class Results {
         this.numRuns = numRuns;
         this.numSelectedSubsets = numSelectedSubsets;
         this.PATH_PROJECT = projectPath;
-        PATH_DATA_CSV = PATH_PROJECT + "CSV\\";
-        PATH_DATA_ARFF = PATH_PROJECT + "ARFF\\";
+        PATH_DATA_CSV = PATH_PROJECT + "CSV" + File.separator;
+        PATH_DATA_ARFF = PATH_PROJECT + "ARFF" + File.separator;
         featureSelectionMethodName = methodName.toString();
         this.selectedEvaluationClassifierPanel = selectedEvaluationClassifierPanel;
         this.classifierType = ClassifierType.parse(classifierName.toString());
@@ -135,7 +136,7 @@ public class Results {
      * @see unifeat.dataset.DatasetInfo
      */
     private String addTextToPanel() {
-        String messages = "General infomation:\n";
+        String messages = "General information:\n";
         messages += "   Path of the workspace: " + PATH_PROJECT + "\n";
         messages += "   Number of samples in the training set: " + data.getNumTrainSet() + "\n";
         messages += "   Number of samples in the test set: " + data.getNumTestSet() + "\n";

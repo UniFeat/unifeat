@@ -52,6 +52,7 @@ import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 //import javax.swing.UIManager;
 import java.awt.event.MouseMotionListener;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
@@ -432,7 +433,7 @@ public class DiagramPanel extends JPanel implements ActionListener, MouseMotionL
             c.paint(im.getGraphics());
             BufferedImage im2 = im.getSubimage(0, 25, c.getWidth(), c.getHeight() - 25);
             try {
-                ImageIO.write(im2, "png", new File(newPath + "\\diagram.png"));
+                ImageIO.write(im2, "png", new File(Paths.get(newPath, "diagram.png").toString()));
             } catch (IOException ex) {
                 Logger.getLogger(DiagramPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
