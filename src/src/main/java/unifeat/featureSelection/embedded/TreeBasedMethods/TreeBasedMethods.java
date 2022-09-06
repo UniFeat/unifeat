@@ -23,6 +23,7 @@
  */
 package unifeat.featureSelection.embedded.TreeBasedMethods;
 
+import java.io.File;
 import unifeat.featureSelection.embedded.EmbeddedApproach;
 import unifeat.gui.featureSelection.embedded.decisionTreeBased.TreeType;
 import weka.core.Instances;
@@ -52,7 +53,7 @@ public abstract class TreeBasedMethods extends EmbeddedApproach {
     public TreeBasedMethods(Object... arguments) {
         super((String) arguments[0]);
         TREE_TYPE = (TreeType) arguments[1];
-        TEMP_PATH = PROJECT_PATH + "Temp\\";
+        TEMP_PATH = PROJECT_PATH + "Temp" + File.separator;
     }
 
     /**

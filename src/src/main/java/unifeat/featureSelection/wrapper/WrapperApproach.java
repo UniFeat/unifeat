@@ -23,6 +23,7 @@
  */
 package unifeat.featureSelection.wrapper;
 
+import java.io.File;
 import unifeat.dataset.DatasetInfo;
 import unifeat.featureSelection.FeatureSelection;
 import unifeat.featureSelection.wrapper.ACOBasedMethods.OptimalACO.OptimalACO;
@@ -59,7 +60,7 @@ public abstract class WrapperApproach extends FeatureSelection {
     public WrapperApproach(String path) {
         super();
         this.PROJECT_PATH = path;
-        this.TEMP_PATH = this.PROJECT_PATH + "Temp\\";
+        this.TEMP_PATH = this.PROJECT_PATH + "Temp" + File.separator;
     }
 
     /**

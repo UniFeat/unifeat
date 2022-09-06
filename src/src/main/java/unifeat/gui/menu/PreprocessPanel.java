@@ -31,6 +31,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
@@ -200,7 +201,7 @@ public class PreprocessPanel extends JFrame
         JFileChooser jfch = new JFileChooser();
         jfch.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         if (jfch.showSaveDialog(btn_save) == JFileChooser.APPROVE_OPTION) {
-            newPath = jfch.getSelectedFile().getAbsolutePath() + "\\NewData.data";
+            newPath = Paths.get(jfch.getSelectedFile().getAbsolutePath(), "NewData.data").toString();
         }
 
         if (rd_tab.isSelected()) {

@@ -29,6 +29,7 @@ import unifeat.gui.classifier.svmClassifier.SVMKernelType;
 import unifeat.util.ArraysFunc;
 import unifeat.util.FileFunc;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -65,7 +66,7 @@ public abstract class SVMBasedMethods extends EmbeddedApproach {
         super((String) arguments[0]);
         kernelType = (SVMKernelType) arguments[1];
         parameterC = (double) arguments[2];
-        TEMP_PATH = PROJECT_PATH + "Temp\\";
+        TEMP_PATH = PROJECT_PATH + "Temp" + File.separator;
     }
 
     /**
@@ -79,7 +80,7 @@ public abstract class SVMBasedMethods extends EmbeddedApproach {
         super(path);
         this.kernelType = kernelType;
         this.parameterC = c;
-        TEMP_PATH = PROJECT_PATH + "Temp\\";
+        TEMP_PATH = PROJECT_PATH + "Temp" + File.separator;
     }
 
     /**
