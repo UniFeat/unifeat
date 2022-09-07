@@ -67,7 +67,7 @@ public class OptimalACOPanel extends BasicACOPanel {
         lbl_initPheromone = new JLabel("Initial pheromone:");
         lbl_initPheromone.setBounds(50, 380, 170, 22);
         txt_initPheromone = new JTextField(Double.toString(DEFAULT_INIT_PHEROMONE));
-        txt_initPheromone.setBounds(170, 380, 120, 21);
+        txt_initPheromone.setBounds(170, 380, 120, 24);
         txt_initPheromone.addKeyListener(this);
         lbl_initPheromoneError = new JLabel("");
         lbl_initPheromoneError.setBounds(300, 380, 50, 22);
@@ -76,7 +76,7 @@ public class OptimalACOPanel extends BasicACOPanel {
         lbl_phi = new JLabel("Parameter phi:");
         lbl_phi.setBounds(50, 415, 170, 22);
         txt_phi = new JTextField(Double.toString(DEFAULT_PHI));
-        txt_phi.setBounds(170, 415, 120, 21);
+        txt_phi.setBounds(170, 415, 120, 24);
         txt_phi.addKeyListener(this);
         lbl_phiError = new JLabel("");
         lbl_phiError.setBounds(300, 415, 50, 22);
@@ -100,10 +100,10 @@ public class OptimalACOPanel extends BasicACOPanel {
                 + "Parameter phi -> the phi parameter in the pheromone update rule for "
                 + "controlling the relative weight of classifier performance and feature "
                 + "subset length (a real number in the range of (0, 1)).\n\n");
-        this.setMethodDescriptionPosition(new Rectangle(10, 35, 545, 90));
-        this.setOkButtonPosition(new Rectangle(190, 470, 75, 23));
-        this.setMoreButtonPosition(new Rectangle(310, 470, 75, 23));
-        this.setPanelSize(new Dimension(570, 560));
+        this.setMethodDescriptionPosition(new Rectangle(10, 35, 550, 90));
+        this.setOkButtonPosition(new Rectangle(190, 470, 75, 25));
+        this.setMoreButtonPosition(new Rectangle(310, 470, 75, 25));
+        this.setPanelSize(new Dimension(580, 560));
 
         contentPane.validate();
 //        contentPane.revalidate();
@@ -235,10 +235,22 @@ public class OptimalACOPanel extends BasicACOPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        OptimalACOPanel dtpanel = new OptimalACOPanel();

@@ -57,7 +57,7 @@ public class SimpleGAPanel extends BasicGAPanel {
                 + "k-fold cross validation on training set is used for evaluating the classification "
                 + "performance of a selected feature subset during feature selection process. </html>");
 
-        this.setMethodDescriptionPosition(new Rectangle(10, 35, 545, 90));
+        this.setMethodDescriptionPosition(new Rectangle(10, 35, 540, 90));
         
         contentPane.validate();
 //        contentPane.revalidate();
@@ -67,10 +67,22 @@ public class SimpleGAPanel extends BasicGAPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SimpleGAPanel dtpanel = new SimpleGAPanel();

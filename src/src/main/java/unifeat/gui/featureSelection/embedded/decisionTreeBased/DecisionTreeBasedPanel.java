@@ -60,8 +60,8 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
             + "Confidence factor -> the confidence factor used for pruning (smaller values incur more pruning).\n\n"
             + "MinNumSample -> the minimum number of samples per leaf.\n\n";
     private static final Dimension C45_PANEL_SIZE = new Dimension(480, 360);
-    private static final Rectangle C45_OK_BUTTON_POSITION = new Rectangle(120, 270, 75, 23);
-    private static final Rectangle C45_MORE_BUTTON_POSITION = new Rectangle(240, 270, 75, 23);
+    private static final Rectangle C45_OK_BUTTON_POSITION = new Rectangle(120, 270, 75, 25);
+    private static final Rectangle C45_MORE_BUTTON_POSITION = new Rectangle(240, 270, 75, 25);
     private JLabel lbl_confidence, lbl_minNum, lbl_confidenceError, lbl_minNumError;
     private JTextField txt_confidence, txt_minNum;
     private static final double DEFAULT_CONFIDENCE = 0.25;
@@ -76,8 +76,8 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
             + "Min num -- the minimum total weight of the instances in a leaf.\n\n"
             + "Min variance prop -- the minimum proportion of the total variance (over all the data) required for split.\n\n";
     private static final Dimension RANDOM_TREE_PANEL_SIZE = new Dimension(480, 440);
-    private static final Rectangle RANDOM_TREE_OK_BUTTON_POSITION = new Rectangle(120, 340, 75, 23);
-    private static final Rectangle RANDOM_TREE_MORE_BUTTON_POSITION = new Rectangle(240, 340, 75, 23);
+    private static final Rectangle RANDOM_TREE_OK_BUTTON_POSITION = new Rectangle(120, 340, 75, 25);
+    private static final Rectangle RANDOM_TREE_MORE_BUTTON_POSITION = new Rectangle(240, 340, 75, 25);
     private JLabel lbl_randomTreeKValue, lbl_randomTreeKValueError,
             lbl_randomTreeMaxDepth, lbl_randomTreeMaxDepthError,
             lbl_randomTreeMinNum, lbl_randomTreeMinNumError,
@@ -94,8 +94,8 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
             + "Max depth -- the maximum depth of the tree (0 means unlimited depth).\n\n"
             + "Num iterations -- the number of iterations to be performed.\n\n";
     private static final Dimension RANDOM_FOREST_PANEL_SIZE = new Dimension(480, 410);
-    private static final Rectangle RANDOM_FOREST_OK_BUTTON_POSITION = new Rectangle(120, 310, 75, 23);
-    private static final Rectangle RANDOM_FOREST_MORE_BUTTON_POSITION = new Rectangle(240, 310, 75, 23);
+    private static final Rectangle RANDOM_FOREST_OK_BUTTON_POSITION = new Rectangle(120, 310, 75, 25);
+    private static final Rectangle RANDOM_FOREST_MORE_BUTTON_POSITION = new Rectangle(240, 310, 75, 25);
     private JLabel lbl_randomForestNumFeatures, lbl_randomForestNumFeaturesError,
             lbl_maxDepth, lbl_maxDepthError,
             lbl_randomForestNumIterations, lbl_randomForestNumIterationsError;
@@ -125,7 +125,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_treeType.setBounds(30, 155, 120, 22);
         cb_treeType = new JComboBox();
         cb_treeType.setModel(new DefaultComboBoxModel(TreeType.asList()));
-        cb_treeType.setBounds(130, 155, 200, 22);
+        cb_treeType.setBounds(130, 155, 200, 25);
         cb_treeType.addItemListener((ItemEvent e) -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 treeType = TreeType.parse(cb_treeType.getSelectedItem().toString());
@@ -138,7 +138,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_confidence = new JLabel("Confidence factor:");
         lbl_confidence.setBounds(30, 190, 120, 22);
         txt_confidence = new JTextField(String.valueOf(DEFAULT_CONFIDENCE));
-        txt_confidence.setBounds(130, 190, 120, 21);
+        txt_confidence.setBounds(130, 190, 120, 24);
         txt_confidence.addKeyListener(this);
         lbl_confidenceError = new JLabel("");
         lbl_confidenceError.setBounds(260, 190, 50, 22);
@@ -147,7 +147,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_minNum = new JLabel("MinNumSample:");
         lbl_minNum.setBounds(30, 225, 120, 22);
         txt_minNum = new JTextField(Integer.toString(DEFAULT_MIN_NUM));
-        txt_minNum.setBounds(130, 225, 120, 21);
+        txt_minNum.setBounds(130, 225, 120, 24);
         txt_minNum.addKeyListener(this);
         lbl_minNumError = new JLabel("");
         lbl_minNumError.setBounds(260, 225, 50, 22);
@@ -157,7 +157,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomTreeKValue = new JLabel("K value:");
         lbl_randomTreeKValue.setBounds(30, 190, 120, 22);
         txt_randomTreeKValue = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_K_VALUE));
-        txt_randomTreeKValue.setBounds(130, 190, 120, 21);
+        txt_randomTreeKValue.setBounds(130, 190, 120, 24);
         txt_randomTreeKValue.addKeyListener(this);
         lbl_randomTreeKValueError = new JLabel("");
         lbl_randomTreeKValueError.setBounds(260, 190, 50, 22);
@@ -166,7 +166,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomTreeMaxDepth = new JLabel("Max depth:");
         lbl_randomTreeMaxDepth.setBounds(30, 225, 120, 22);
         txt_randomTreeMaxDepth = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MAX_DEPTH));
-        txt_randomTreeMaxDepth.setBounds(130, 225, 120, 21);
+        txt_randomTreeMaxDepth.setBounds(130, 225, 120, 24);
         txt_randomTreeMaxDepth.addKeyListener(this);
         lbl_randomTreeMaxDepthError = new JLabel("");
         lbl_randomTreeMaxDepthError.setBounds(260, 225, 50, 22);
@@ -175,7 +175,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomTreeMinNum = new JLabel("MinNum:");
         lbl_randomTreeMinNum.setBounds(30, 260, 120, 22);
         txt_randomTreeMinNum = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MIN_NUM));
-        txt_randomTreeMinNum.setBounds(130, 260, 120, 21);
+        txt_randomTreeMinNum.setBounds(130, 260, 120, 24);
         txt_randomTreeMinNum.addKeyListener(this);
         lbl_randomTreeMinNumError = new JLabel("");
         lbl_randomTreeMinNumError.setBounds(260, 260, 50, 22);
@@ -184,7 +184,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomTreeMinVarianceProp = new JLabel("Min Variance Prop:");
         lbl_randomTreeMinVarianceProp.setBounds(30, 295, 120, 22);
         txt_randomTreeMinVarianceProp = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MIN_VARIANCE_PROP));
-        txt_randomTreeMinVarianceProp.setBounds(130, 295, 120, 21);
+        txt_randomTreeMinVarianceProp.setBounds(130, 295, 120, 24);
         txt_randomTreeMinVarianceProp.addKeyListener(this);
         lbl_randomTreeMinVariancePropError = new JLabel("");
         lbl_randomTreeMinVariancePropError.setBounds(260, 295, 50, 22);
@@ -194,7 +194,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomForestNumFeatures = new JLabel("Num features:");
         lbl_randomForestNumFeatures.setBounds(30, 190, 120, 22);
         txt_randomForestNumFeatures = new JTextField(String.valueOf(DEFAULT_RANDOM_FOREST_NUM_FEATURES));
-        txt_randomForestNumFeatures.setBounds(130, 190, 120, 21);
+        txt_randomForestNumFeatures.setBounds(130, 190, 120, 24);
         txt_randomForestNumFeatures.addKeyListener(this);
         lbl_randomForestNumFeaturesError = new JLabel("");
         lbl_randomForestNumFeaturesError.setBounds(260, 190, 50, 22);
@@ -203,7 +203,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_maxDepth = new JLabel("Max depth:");
         lbl_maxDepth.setBounds(30, 225, 120, 22);
         txt_maxDepth = new JTextField(Integer.toString(DEFAULT_MAX_DEPTH));
-        txt_maxDepth.setBounds(130, 225, 120, 21);
+        txt_maxDepth.setBounds(130, 225, 120, 24);
         txt_maxDepth.addKeyListener(this);
         lbl_maxDepthError = new JLabel("");
         lbl_maxDepthError.setBounds(260, 225, 50, 22);
@@ -212,7 +212,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_randomForestNumIterations = new JLabel("Num iterations:");
         lbl_randomForestNumIterations.setBounds(30, 260, 120, 22);
         txt_randomForestNumIterations = new JTextField(Integer.toString(DEFAULT_RANDOM_FOREST_NUM_ITERATION));
-        txt_randomForestNumIterations.setBounds(130, 260, 120, 21);
+        txt_randomForestNumIterations.setBounds(130, 260, 120, 24);
         txt_randomForestNumIterations.addKeyListener(this);
         lbl_randomForestNumIterationsError = new JLabel("");
         lbl_randomForestNumIterationsError.setBounds(260, 260, 50, 22);
@@ -795,10 +795,22 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SwingUtilities.invokeLater(() -> {

@@ -111,10 +111,10 @@ public abstract class BasicPSOPanel extends ParameterPanel
                 + "Velocity interval -> the velocity values of each particle in the range of start and end values.\n\n"
                 + "Folds -> the number of equal sized subsamples that is used in k-fold cross validation.\n\n",
                 new Rectangle(10, 10, 540, 20),
-                new Rectangle(10, 35, 545, 80),
-                new Rectangle(190, 460, 75, 23),
-                new Rectangle(310, 460, 75, 23),
-                new Dimension(570, 550));
+                new Rectangle(10, 35, 545, 90),
+                new Rectangle(190, 460, 75, 25),
+                new Rectangle(310, 460, 75, 25),
+                new Dimension(575, 550));
         Container contentPane = getContentPane();
 
         lbl_classifierType = new JLabel("Classifier type:");
@@ -122,18 +122,18 @@ public abstract class BasicPSOPanel extends ParameterPanel
         cb_classifierType = new JComboBox();
         cb_classifierType.setModel(new DefaultComboBoxModel(ClassifierType.asList()));
         cb_classifierType.setSelectedIndex(2); // set on naive bayes classifier
-        cb_classifierType.setBounds(170, 135, 170, 22);
+        cb_classifierType.setBounds(170, 135, 185, 25);
         cb_classifierType.addItemListener(this);
 
         btn_classifierType = new JButton("More option...");
-        btn_classifierType.setBounds(350, 135, 105, 23);
+        btn_classifierType.setBounds(365, 135, 105, 25);
         btn_classifierType.setEnabled(false);
         btn_classifierType.addActionListener(this);
 
         lbl_numIteration = new JLabel("Number of iterations:");
         lbl_numIteration.setBounds(50, 170, 170, 22);
         txt_numIteration = new JTextField(Integer.toString(DEFAULT_NUM_ITERATION));
-        txt_numIteration.setBounds(170, 170, 120, 21);
+        txt_numIteration.setBounds(170, 170, 120, 24);
         txt_numIteration.addKeyListener(this);
         lbl_numIterationError = new JLabel("");
         lbl_numIterationError.setBounds(300, 170, 50, 22);
@@ -142,7 +142,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_populationSize = new JLabel("Population size:");
         lbl_populationSize.setBounds(50, 205, 170, 22);
         txt_populationSize = new JTextField(Integer.toString(DEFAULT_POPULATION_SIZE));
-        txt_populationSize.setBounds(170, 205, 120, 21);
+        txt_populationSize.setBounds(170, 205, 120, 24);
         txt_populationSize.addKeyListener(this);
         lbl_populationSizeError = new JLabel("");
         lbl_populationSizeError.setBounds(300, 205, 50, 22);
@@ -151,7 +151,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_inertiaWeight = new JLabel("Parameter w:");
         lbl_inertiaWeight.setBounds(50, 240, 170, 22);
         txt_inertiaWeight = new JTextField(Double.toString(DEFAULT_INERTIA_WEIGHT));
-        txt_inertiaWeight.setBounds(170, 240, 120, 21);
+        txt_inertiaWeight.setBounds(170, 240, 120, 24);
         txt_inertiaWeight.addKeyListener(this);
         lbl_inertiaWeightError = new JLabel("");
         lbl_inertiaWeightError.setBounds(300, 240, 50, 22);
@@ -160,7 +160,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_c1 = new JLabel("Parameter c1:");
         lbl_c1.setBounds(50, 275, 170, 22);
         txt_c1 = new JTextField(Double.toString(DEFAULT_C1));
-        txt_c1.setBounds(170, 275, 120, 21);
+        txt_c1.setBounds(170, 275, 120, 24);
         txt_c1.addKeyListener(this);
         lbl_c1Error = new JLabel("");
         lbl_c1Error.setBounds(300, 275, 50, 22);
@@ -169,7 +169,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_c2 = new JLabel("Parameter c2:");
         lbl_c2.setBounds(50, 310, 170, 22);
         txt_c2 = new JTextField(Double.toString(DEFAULT_C2));
-        txt_c2.setBounds(170, 310, 120, 21);
+        txt_c2.setBounds(170, 310, 120, 24);
         txt_c2.addKeyListener(this);
         lbl_c2Error = new JLabel("");
         lbl_c2Error.setBounds(300, 310, 50, 22);
@@ -181,7 +181,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_startPosInterval = new JLabel("start:");
         lbl_startPosInterval.setBounds(170, 345, 170, 22);
         txt_startPosInterval = new JTextField(Double.toString(DEFAULT_START_POS_INTERVAL));
-        txt_startPosInterval.setBounds(200, 345, 120, 21);
+        txt_startPosInterval.setBounds(200, 345, 120, 24);
         txt_startPosInterval.addKeyListener(this);
         lbl_startPosIntervalError = new JLabel("");
         lbl_startPosIntervalError.setBounds(330, 345, 50, 22);
@@ -190,7 +190,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_endPosInterval = new JLabel("end:");
         lbl_endPosInterval.setBounds(350, 345, 170, 22);
         txt_endPosInterval = new JTextField(Double.toString(DEFAULT_END_POS_INTERVAL));
-        txt_endPosInterval.setBounds(380, 345, 120, 21);
+        txt_endPosInterval.setBounds(380, 345, 120, 24);
         txt_endPosInterval.addKeyListener(this);
         lbl_endPosIntervalError = new JLabel("");
         lbl_endPosIntervalError.setBounds(510, 345, 50, 22);
@@ -202,7 +202,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_minVelocity = new JLabel("start:");
         lbl_minVelocity.setBounds(170, 380, 170, 22);
         txt_minVelocity = new JTextField(Double.toString(DEFAULT_MIN_VELOCITY));
-        txt_minVelocity.setBounds(200, 380, 120, 21);
+        txt_minVelocity.setBounds(200, 380, 120, 24);
         txt_minVelocity.addKeyListener(this);
         lbl_minVelocityError = new JLabel("");
         lbl_minVelocityError.setBounds(330, 380, 50, 22);
@@ -211,7 +211,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_maxVelocity = new JLabel("end:");
         lbl_maxVelocity.setBounds(350, 380, 170, 22);
         txt_maxVelocity = new JTextField(Double.toString(DEFAULT_MAX_VELOCITY));
-        txt_maxVelocity.setBounds(380, 380, 120, 21);
+        txt_maxVelocity.setBounds(380, 380, 120, 24);
         txt_maxVelocity.addKeyListener(this);
         lbl_maxVelocityError = new JLabel("");
         lbl_maxVelocityError.setBounds(510, 380, 50, 22);
@@ -220,7 +220,7 @@ public abstract class BasicPSOPanel extends ParameterPanel
         lbl_kFolds = new JLabel("Folds:");
         lbl_kFolds.setBounds(50, 415, 170, 22);
         txt_kFolds = new JTextField(Integer.toString(DEFAULT_K_FOLDS));
-        txt_kFolds.setBounds(170, 415, 120, 21);
+        txt_kFolds.setBounds(170, 415, 120, 24);
         txt_kFolds.addKeyListener(this);
         lbl_kFoldsError = new JLabel("");
         lbl_kFoldsError.setBounds(300, 415, 50, 22);

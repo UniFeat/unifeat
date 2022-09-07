@@ -71,16 +71,16 @@ public class LaplacianScorePanel extends ParameterPanel {
                 + "Constant parameter -> the normalize parameter.\n\n",
                 new Rectangle(10, 10, 540, 20),
                 new Rectangle(10, 35, 545, 80),
-                new Rectangle(190, 220, 75, 23),
-                new Rectangle(310, 220, 75, 23),
-                new Dimension(570, 300));
+                new Rectangle(190, 220, 75, 25),
+                new Rectangle(310, 220, 75, 25),
+                new Dimension(575, 300));
 
         Container contentPane = getContentPane();
 
         lbl_KNearest = new JLabel("k-nearest neighbor:");
         lbl_KNearest.setBounds(50, 135, 170, 22);
         txt_KNearest = new JTextField(String.valueOf(DEFAULT_K_NEAREST));
-        txt_KNearest.setBounds(170, 135, 120, 21);
+        txt_KNearest.setBounds(170, 135, 120, 24);
         txt_KNearest.addKeyListener(this);
         lbl_KNearestError = new JLabel("");
         lbl_KNearestError.setBounds(300, 135, 50, 22);
@@ -89,7 +89,7 @@ public class LaplacianScorePanel extends ParameterPanel {
         lbl_constParam = new JLabel("Constant parameter:");
         lbl_constParam.setBounds(50, 170, 170, 22);
         txt_constParam = new JTextField(String.valueOf(DEFAULT_CONST_PARAM));
-        txt_constParam.setBounds(170, 170, 120, 21);
+        txt_constParam.setBounds(170, 170, 120, 24);
         txt_constParam.addKeyListener(this);
         lbl_constParamError = new JLabel("");
         lbl_constParamError.setBounds(300, 170, 50, 22);
@@ -214,10 +214,22 @@ public class LaplacianScorePanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        LaplacianScorePanel dtpanel = new LaplacianScorePanel();

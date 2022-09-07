@@ -72,7 +72,7 @@ public class SelectModePanel extends JDialog implements ActionListener {
         bg_mode.add(rd_total);
 
         btn_ok = new JButton("Ok");
-        btn_ok.setBounds(110, 110, 70, 23);
+        btn_ok.setBounds(110, 110, 70, 25);
         btn_ok.addActionListener(this);
 
 
@@ -143,9 +143,22 @@ public class SelectModePanel extends JDialog implements ActionListener {
 
 //    public static void main(String[] args) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SelectModePanel app = new SelectModePanel();

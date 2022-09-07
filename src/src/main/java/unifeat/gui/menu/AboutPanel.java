@@ -74,7 +74,7 @@ public class AboutPanel extends JDialog implements MouseListener {
         lbl_ver.setFont(new Font("Tahoma", Font.BOLD, 11));
         lbl_ver.setBounds(260, 160, 70, 15);
 
-        lbl_verVal = new JLabel("0.1.0");
+        lbl_verVal = new JLabel("0.1.1");
         lbl_verVal.setBounds(340, 160, 100, 15);
 
         lbl_author = new JLabel("Author:");
@@ -98,26 +98,26 @@ public class AboutPanel extends JDialog implements MouseListener {
         panel_footer = new JPanel();
         panel_footer.setBounds(0, 250, 670, 45);
         panel_footer.setLayout(null);
-        panel_footer.setBackground(new Color(225, 225, 225));
+        panel_footer.setBackground(new Color(228, 231, 237));
 
         lbl_footer_1 = new JLabel("UniFeat is developed at the ");
-        lbl_footer_1.setBounds(50, 10, 135, 15);
+        lbl_footer_1.setBounds(50, 10, 145, 15);
 
         lbl_nameUni = new JLabel("<html><a href=\"\">University of Kurdistan</a></html>");
-        lbl_nameUni.setBounds(185, 10, 109, 15);
+        lbl_nameUni.setBounds(195, 10, 119, 15);
         lbl_nameUni.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lbl_nameUni.addMouseListener(this);
 
         lbl_footer_2 = new JLabel(", Iran, and distributed under the terms of the ");
-        lbl_footer_2.setBounds(294, 10, 223, 15);
+        lbl_footer_2.setBounds(314, 10, 230, 15);
 
         lbl_License = new JLabel("<html><a href=\"\">MIT License</a></html>");
-        lbl_License.setBounds(517, 10, 57, 15);
+        lbl_License.setBounds(545, 10, 67, 15);
         lbl_License.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lbl_License.addMouseListener(this);
 
         lbl_footer_3 = new JLabel(".");
-        lbl_footer_3.setBounds(574, 10, 5, 15);
+        lbl_footer_3.setBounds(609, 10, 5, 15);
 
         panel_footer.add(lbl_footer_1);
         panel_footer.add(lbl_nameUni);
@@ -173,9 +173,9 @@ public class AboutPanel extends JDialog implements MouseListener {
         } else if (e.getSource().equals(lbl_homVal)) {
             openURL("https://unifeat.github.io/");
         } else if (e.getSource().equals(lbl_nameUni)) {
-            openURL("http://international.uok.ac.ir/");
+            openURL("https://international.uok.ac.ir/en/");
         } else if (e.getSource().equals(lbl_License)) {
-            openURL("https://opensource.org/licenses/MIT");
+            openURL("https://github.com/UniFeat/unifeat/blob/main/LICENSE");
         }
     }
 
@@ -222,9 +222,23 @@ public class AboutPanel extends JDialog implements MouseListener {
 
 //    public static void main(String[] args) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        AboutPanel mop = new AboutPanel();

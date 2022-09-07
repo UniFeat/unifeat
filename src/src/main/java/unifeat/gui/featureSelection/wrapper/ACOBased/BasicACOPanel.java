@@ -102,8 +102,8 @@ public abstract class BasicACOPanel extends ParameterPanel
                 + "Folds -> the number of equal sized subsamples that is used in k-fold cross validation.\n\n",
                 new Rectangle(10, 10, 540, 20),
                 new Rectangle(10, 35, 545, 80),
-                new Rectangle(190, 400, 75, 23),
-                new Rectangle(310, 400, 75, 23),
+                new Rectangle(190, 400, 75, 25),
+                new Rectangle(310, 400, 75, 25),
                 new Dimension(570, 490));
         Container contentPane = getContentPane();
 
@@ -112,18 +112,18 @@ public abstract class BasicACOPanel extends ParameterPanel
         cb_classifierType = new JComboBox();
         cb_classifierType.setModel(new DefaultComboBoxModel(ClassifierType.asList()));
         cb_classifierType.setSelectedIndex(2); // set on naive bayes classifier
-        cb_classifierType.setBounds(170, 135, 170, 22);
+        cb_classifierType.setBounds(170, 135, 190, 25);
         cb_classifierType.addItemListener(this);
 
         btn_classifierType = new JButton("More option...");
-        btn_classifierType.setBounds(350, 135, 105, 23);
+        btn_classifierType.setBounds(370, 135, 105, 25);
         btn_classifierType.setEnabled(false);
         btn_classifierType.addActionListener(this);
 
         lbl_numIteration = new JLabel("Number of iterations:");
         lbl_numIteration.setBounds(50, 170, 170, 22);
         txt_numIteration = new JTextField(Integer.toString(DEFAULT_NUM_ITERATION));
-        txt_numIteration.setBounds(170, 170, 120, 21);
+        txt_numIteration.setBounds(170, 170, 120, 24);
         txt_numIteration.addKeyListener(this);
         lbl_numIterationError = new JLabel("");
         lbl_numIterationError.setBounds(300, 170, 50, 22);
@@ -132,7 +132,7 @@ public abstract class BasicACOPanel extends ParameterPanel
         lbl_colonySize = new JLabel("Colony size:");
         lbl_colonySize.setBounds(50, 205, 170, 22);
         txt_colonySize = new JTextField(Integer.toString(DEFAULT_COLONY_SIZE));
-        txt_colonySize.setBounds(170, 205, 120, 21);
+        txt_colonySize.setBounds(170, 205, 120, 24);
         txt_colonySize.addKeyListener(this);
         lbl_colonySizeError = new JLabel("");
         lbl_colonySizeError.setBounds(300, 205, 50, 22);
@@ -141,7 +141,7 @@ public abstract class BasicACOPanel extends ParameterPanel
         lbl_alpha = new JLabel("Parameter alpha:");
         lbl_alpha.setBounds(50, 240, 170, 22);
         txt_alpha = new JTextField(Double.toString(DEFAULT_ALPHA));
-        txt_alpha.setBounds(170, 240, 120, 21);
+        txt_alpha.setBounds(170, 240, 120, 24);
         txt_alpha.addKeyListener(this);
         lbl_alphaError = new JLabel("");
         lbl_alphaError.setBounds(300, 240, 50, 22);
@@ -150,7 +150,7 @@ public abstract class BasicACOPanel extends ParameterPanel
         lbl_beta = new JLabel("Parameter beta:");
         lbl_beta.setBounds(50, 275, 170, 22);
         txt_beta = new JTextField(Double.toString(DEFAULT_BETA));
-        txt_beta.setBounds(170, 275, 120, 21);
+        txt_beta.setBounds(170, 275, 120, 24);
         txt_beta.addKeyListener(this);
         lbl_betaError = new JLabel("");
         lbl_betaError.setBounds(300, 275, 50, 22);
@@ -159,7 +159,7 @@ public abstract class BasicACOPanel extends ParameterPanel
         lbl_evRate = new JLabel("Evaporation rate:");
         lbl_evRate.setBounds(50, 310, 170, 22);
         txt_evRate = new JTextField(Double.toString(DEFAULT_EV_RATE));
-        txt_evRate.setBounds(170, 310, 120, 21);
+        txt_evRate.setBounds(170, 310, 120, 24);
         txt_evRate.addKeyListener(this);
         lbl_evRateError = new JLabel("");
         lbl_evRateError.setBounds(300, 310, 50, 22);
@@ -168,7 +168,7 @@ public abstract class BasicACOPanel extends ParameterPanel
         lbl_kFolds = new JLabel("Folds:");
         lbl_kFolds.setBounds(50, 345, 170, 22);
         txt_kFolds = new JTextField(Integer.toString(DEFAULT_K_FOLDS));
-        txt_kFolds.setBounds(170, 345, 120, 21);
+        txt_kFolds.setBounds(170, 345, 120, 24);
         txt_kFolds.addKeyListener(this);
         lbl_kFoldsError = new JLabel("");
         lbl_kFoldsError.setBounds(300, 345, 50, 22);

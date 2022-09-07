@@ -66,8 +66,8 @@ public class RRFSPanel extends ParameterPanel {
                         "Similarity threshold -> maximum allowed similarity between two features (a real number in the range of [0, 1]).\n\n",
                                 new Rectangle(10, 10, 440, 20),
                 new Rectangle(10, 35, 450, 80),
-                new Rectangle(140, 185, 75, 23),
-                new Rectangle(260, 185, 75, 23),
+                new Rectangle(140, 185, 75, 25),
+                new Rectangle(260, 185, 75, 25),
                 new Dimension(480, 280));
         
         Container contentPane = getContentPane();
@@ -75,7 +75,7 @@ public class RRFSPanel extends ParameterPanel {
         lbl_similarity = new JLabel("Similarity threshold:");
         lbl_similarity.setBounds(50, 135, 170, 22);
         txt_similarity = new JTextField(String.valueOf(DEFAULT_SIMILARITY));
-        txt_similarity.setBounds(155, 135, 120, 21);
+        txt_similarity.setBounds(155, 135, 120, 24);
         txt_similarity.addKeyListener(this);
         lbl_similarityError = new JLabel("");
         lbl_similarityError.setBounds(285, 135, 50, 22);
@@ -162,10 +162,22 @@ public class RRFSPanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        RRFSPanel dtpanel = new RRFSPanel();

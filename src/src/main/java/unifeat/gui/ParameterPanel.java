@@ -36,6 +36,8 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
 
 /**
  * The abstract class contains the main methods and fields that are used to
@@ -97,7 +99,9 @@ public abstract class ParameterPanel extends JDialog
         panel_about = new JPanel();
         panel_about.setBounds(methodDescriptionPosition);
         panel_about.setLayout(null);
-        panel_about.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(171, 170, 170)), "About"));
+        panel_about.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "About ", TitledBorder.LEFT, TitledBorder.TOP));        
         lbl_about = new JLabel(methodDescription);
         lbl_about.setBounds(methodDescriptionPosition.x + 5, methodDescriptionPosition.y - 30, methodDescriptionPosition.width - 15, methodDescriptionPosition.height);
 

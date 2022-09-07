@@ -70,19 +70,19 @@ public class ProjectPath extends JFrame implements ActionListener {
         lbl_select.setBounds(20, 30, 204, 14);
 
         lbl_path = new JLabel("Folder:");
-        lbl_path.setBounds(20, 70, 34, 14);
+        lbl_path.setBounds(20, 70, 40, 14);
 
         txt_path = new JTextField();
-        txt_path.setBounds(60, 67, 180, 21);
+        txt_path.setBounds(60, 67, 180, 24);
         txt_path.setBackground(Color.WHITE);
         txt_path.setEditable(false);
 
         btn_browse = new JButton("Browse...");
-        btn_browse.setBounds(250, 66, 80, 23);
+        btn_browse.setBounds(250, 66, 80, 25);
         btn_browse.addActionListener(this);
 
         btn_select = new JButton("Ok");
-        btn_select.setBounds(140, 125, 69, 23);
+        btn_select.setBounds(140, 120, 69, 25);
         btn_select.addActionListener(this);
         btn_select.setEnabled(false);
 
@@ -94,7 +94,7 @@ public class ProjectPath extends JFrame implements ActionListener {
 
         this.setTitle("Workspase Selection");
         this.setIconImage(new ImageIcon(getClass().getResource(smallLogoPath)).getImage());
-        this.setSize(350, 190);
+        this.setSize(360, 190);
         this.setLocationRelativeTo(null);
         this.add(mainPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -150,9 +150,9 @@ public class ProjectPath extends JFrame implements ActionListener {
     /**
      * This method is the main method to start the tool.
      *
-     * @param args an array of String objects for supplying command-line 
+     * @param args an array of String objects for supplying command-line
      * arguments
-     * 
+     *
      * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
@@ -160,10 +160,22 @@ public class ProjectPath extends JFrame implements ActionListener {
         Thread.setDefaultUncaughtExceptionHandler(globalExceptionHandler);
 
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-            System.out.println("Error setting native LAF: " + e);
+            // Check if Nimbus is supported and get its classname
+            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(lafInfo.getName())) {
+                    UIManager.setLookAndFeel(lafInfo.getClassName());
+                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+            try {
+                // If Nimbus is not available, set to the system look and feel
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+                System.out.println("Error setting native LAF: " + eIn);
+            }
         }
 
         SwingUtilities.invokeLater(() -> {

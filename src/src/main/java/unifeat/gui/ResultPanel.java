@@ -76,22 +76,22 @@ public class ResultPanel extends JPanel implements ActionListener {
         scroll.setViewportView(txtArea_main);
 
         btn_showFeat = new JButton("View subsets");
-        btn_showFeat.setBounds(70, 420, 130, 23);
+        btn_showFeat.setBounds(70, 420, 130, 25);
         btn_showFeat.setEnabled(false);
         btn_showFeat.addActionListener(this);
 
         btn_showDir = new JButton("View train/test sets");
-        btn_showDir.setBounds(210, 420, 130, 23);
+        btn_showDir.setBounds(210, 420, 130, 25);
         btn_showDir.setEnabled(false);
         btn_showDir.addActionListener(this);
 
         btn_saveRes = new JButton("Save results");
-        btn_saveRes.setBounds(350, 420, 130, 23);
+        btn_saveRes.setBounds(350, 420, 130, 25);
         btn_saveRes.setEnabled(false);
         btn_saveRes.addActionListener(this);
 
         btn_exit = new JButton("Close");
-        btn_exit.setBounds(490, 420, 130, 23);
+        btn_exit.setBounds(490, 420, 130, 25);
         btn_exit.setEnabled(false);
         btn_exit.addActionListener(this);
 
@@ -211,10 +211,22 @@ public class ResultPanel extends JPanel implements ActionListener {
 
 //    public static void main(String[] args) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        ResultPanel mop = new ResultPanel("C:\\Users\\ST\\Desktop\\");

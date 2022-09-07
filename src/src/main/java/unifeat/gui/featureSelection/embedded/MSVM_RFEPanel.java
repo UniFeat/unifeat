@@ -77,8 +77,8 @@ public class MSVM_RFEPanel extends ParameterPanel {
                 + "Number of runs -> the number of multiple runs of k-fold cross validation.\n\n",
                 new Rectangle(10, 10, 160, 20),
                 new Rectangle(10, 35, 400, 80),
-                new Rectangle(120, 295, 75, 23),
-                new Rectangle(240, 295, 75, 23),
+                new Rectangle(120, 295, 75, 25),
+                new Rectangle(240, 295, 75, 25),
                 new Dimension(440, 395));
 
         Container contentPane = getContentPane();
@@ -86,12 +86,12 @@ public class MSVM_RFEPanel extends ParameterPanel {
         lbl_kernel = new JLabel("Kernel:");
         lbl_kernel.setBounds(50, 135, 120, 22);
         cb_kernel = new JComboBox(SVMKernelType.asList());
-        cb_kernel.setBounds(140, 135, 240, 22);
+        cb_kernel.setBounds(140, 135, 245, 25);
 
         lbl_parameterC = new JLabel("Parameter c:");
         lbl_parameterC.setBounds(50, 170, 170, 22);
         txt_parameterC = new JTextField(Double.toString(DEFAULT_PARAMETER_C));
-        txt_parameterC.setBounds(140, 170, 120, 21);
+        txt_parameterC.setBounds(140, 170, 120, 24);
         txt_parameterC.addKeyListener(this);
         lbl_parameterCError = new JLabel("");
         lbl_parameterCError.setBounds(270, 170, 50, 22);
@@ -100,7 +100,7 @@ public class MSVM_RFEPanel extends ParameterPanel {
         lbl_numFold = new JLabel("Fold:");
         lbl_numFold.setBounds(50, 205, 170, 22);
         txt_numFold = new JTextField(Integer.toString(DEFAULT_NUM_FOLD));
-        txt_numFold.setBounds(140, 205, 120, 21);
+        txt_numFold.setBounds(140, 205, 120, 24);
         txt_numFold.addKeyListener(this);
         lbl_numFoldError = new JLabel("");
         lbl_numFoldError.setBounds(270, 205, 50, 22);
@@ -109,7 +109,7 @@ public class MSVM_RFEPanel extends ParameterPanel {
         lbl_numRun = new JLabel("Number of runs:");
         lbl_numRun.setBounds(50, 240, 170, 22);
         txt_numRun = new JTextField(Integer.toString(DEFAULT_NUM_RUN));
-        txt_numRun.setBounds(140, 240, 120, 21);
+        txt_numRun.setBounds(140, 240, 120, 24);
         txt_numRun.addKeyListener(this);
         lbl_numRunError = new JLabel("");
         lbl_numRunError.setBounds(270, 240, 50, 22);
@@ -304,10 +304,22 @@ public class MSVM_RFEPanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        MSVM_RFEPanel dtpanel = new MSVM_RFEPanel();

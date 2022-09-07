@@ -4,7 +4,7 @@
     
     <groupId>io.github.unifeat</groupId>
     <artifactId>UniFeat</artifactId>
-    <version>0.1.0</version><!-- UniFeat-version -->
+    <version>0.1.1</version><!-- UniFeat-version -->
     <packaging>jar</packaging>
     
     <name>UniFeat</name>

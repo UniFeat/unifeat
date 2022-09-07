@@ -86,16 +86,16 @@ public class IRRFSACO_2Panel extends ParameterPanel {
                 + "Parameter q0 -> the q0 parameter in the state transition rule (a real number in the range of [0, 1]).",
                 new Rectangle(10, 10, 540, 20),
                 new Rectangle(10, 35, 545, 80),
-                new Rectangle(190, 430, 75, 23),
-                new Rectangle(310, 430, 75, 23),
-                new Dimension(570, 520));
+                new Rectangle(190, 430, 75, 25),
+                new Rectangle(310, 430, 75, 25),
+                new Dimension(575, 520));
 
         Container contentPane = getContentPane();
 
         lbl_initPheromone = new JLabel("Initial pheromone:");
         lbl_initPheromone.setBounds(50, 135, 170, 22);
         txt_initPheromone = new JTextField(String.valueOf(DEFAULT_INIT_PHEROMONE));
-        txt_initPheromone.setBounds(200, 135, 120, 21);
+        txt_initPheromone.setBounds(200, 135, 120, 24);
         txt_initPheromone.addKeyListener(this);
         lbl_initPheromoneError = new JLabel("");
         lbl_initPheromoneError.setBounds(330, 135, 50, 22);
@@ -104,7 +104,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_numIteration = new JLabel("Number of iterations:");
         lbl_numIteration.setBounds(50, 170, 170, 22);
         txt_numIteration = new JTextField(String.valueOf(DEFAULT_NUM_ITERATION));
-        txt_numIteration.setBounds(200, 170, 120, 21);
+        txt_numIteration.setBounds(200, 170, 120, 24);
         txt_numIteration.addKeyListener(this);
         lbl_numIterationError = new JLabel("");
         lbl_numIterationError.setBounds(330, 170, 50, 22);
@@ -113,7 +113,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_numAnts = new JLabel("Number of ants:");
         lbl_numAnts.setBounds(50, 205, 170, 22);
         txt_numAnts = new JTextField(String.valueOf(DEFAULT_NUM_ANTS));
-        txt_numAnts.setBounds(200, 205, 120, 21);
+        txt_numAnts.setBounds(200, 205, 120, 24);
         txt_numAnts.addKeyListener(this);
         lbl_numAntsError = new JLabel("");
         lbl_numAntsError.setBounds(330, 205, 50, 22);
@@ -122,7 +122,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_numFeature = new JLabel("Number of features for ants:");
         lbl_numFeature.setBounds(50, 240, 170, 22);
         txt_numFeature = new JTextField(String.valueOf(DEFAULT_NUM_FEAT_OF_ANT));
-        txt_numFeature.setBounds(200, 240, 120, 21);
+        txt_numFeature.setBounds(200, 240, 120, 24);
         txt_numFeature.addKeyListener(this);
         lbl_numFeatureError = new JLabel("");
         lbl_numFeatureError.setBounds(330, 240, 50, 22);
@@ -131,7 +131,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_evRate = new JLabel("Evaporation rate:");
         lbl_evRate.setBounds(50, 275, 170, 22);
         txt_evRate = new JTextField(String.valueOf(DEFAULT_EV_RATE));
-        txt_evRate.setBounds(200, 275, 120, 21);
+        txt_evRate.setBounds(200, 275, 120, 24);
         txt_evRate.addKeyListener(this);
         lbl_evRateError = new JLabel("");
         lbl_evRateError.setBounds(330, 275, 50, 22);
@@ -140,7 +140,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_alpha = new JLabel("Parameter alpha:");
         lbl_alpha.setBounds(50, 310, 170, 22);
         txt_alpha = new JTextField(String.valueOf(DEFAULT_ALPHA));
-        txt_alpha.setBounds(200, 310, 120, 21);
+        txt_alpha.setBounds(200, 310, 120, 24);
         txt_alpha.addKeyListener(this);
         lbl_alphaError = new JLabel("");
         lbl_alphaError.setBounds(330, 310, 50, 22);
@@ -149,7 +149,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_beta = new JLabel("Parameter beta:");
         lbl_beta.setBounds(50, 345, 170, 22);
         txt_beta = new JTextField(String.valueOf(DEFAULT_BETA));
-        txt_beta.setBounds(200, 345, 120, 21);
+        txt_beta.setBounds(200, 345, 120, 24);
         txt_beta.addKeyListener(this);
         lbl_betaError = new JLabel("");
         lbl_betaError.setBounds(330, 345, 50, 22);
@@ -158,7 +158,7 @@ public class IRRFSACO_2Panel extends ParameterPanel {
         lbl_q0 = new JLabel("Parameter q0:");
         lbl_q0.setBounds(50, 380, 170, 22);
         txt_q0 = new JTextField(String.valueOf(DEFAULT_Q0));
-        txt_q0.setBounds(200, 380, 120, 21);
+        txt_q0.setBounds(200, 380, 120, 24);
         txt_q0.addKeyListener(this);
         lbl_q0Error = new JLabel("");
         lbl_q0Error.setBounds(330, 380, 50, 22);
@@ -500,10 +500,22 @@ public class IRRFSACO_2Panel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        IRRFSACO_2Panel dtpanel = new IRRFSACO_2Panel();

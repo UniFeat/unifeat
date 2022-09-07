@@ -68,7 +68,7 @@ public class HPSO_LSPanel extends BasicPSOPanel {
         lbl_epsilon = new JLabel("Parameter epsilon:");
         lbl_epsilon.setBounds(50, 450, 170, 22);
         txt_epsilon = new JTextField(String.valueOf(DEFAULT_EPSILON));
-        txt_epsilon.setBounds(170, 450, 120, 21);
+        txt_epsilon.setBounds(170, 450, 120, 24);
         txt_epsilon.addKeyListener(this);
         lbl_epsilonError = new JLabel("");
         lbl_epsilonError.setBounds(300, 450, 50, 22);
@@ -77,7 +77,7 @@ public class HPSO_LSPanel extends BasicPSOPanel {
         lbl_alpha = new JLabel("Parameter alpha:");
         lbl_alpha.setBounds(50, 485, 170, 22);
         txt_alpha = new JTextField(String.valueOf(DEFAULT_ALPHA));
-        txt_alpha.setBounds(170, 485, 120, 21);
+        txt_alpha.setBounds(170, 485, 120, 24);
         txt_alpha.addKeyListener(this);
         lbl_alphaError = new JLabel("");
         lbl_alphaError.setBounds(300, 485, 50, 22);
@@ -98,9 +98,9 @@ public class HPSO_LSPanel extends BasicPSOPanel {
         this.setMoreOptionDescription(super.getMoreOptionDescription()
                 + "Parameter epsilon -> the epsilon parameter used in the subset size determining scheme (a real number in the range of (0, 1)).\n\n"
                 + "Parameter alpha -> the alpha parameter used in the local search operation to control similar/dissimilar ((a real number in the range of (0, 1))).\n\n");
-        this.setOkButtonPosition(new Rectangle(190, 530, 75, 23));
-        this.setMoreButtonPosition(new Rectangle(310, 530, 75, 23));
-        this.setPanelSize(new Dimension(570, 610));
+        this.setOkButtonPosition(new Rectangle(190, 530, 75, 25));
+        this.setMoreButtonPosition(new Rectangle(310, 530, 75, 25));
+        this.setPanelSize(new Dimension(575, 610));
         this.enablePositionValues(false);
         this.changeDefaultValue(100, 40, 1.0, 2.0, 2.0, 0.0, 1.0, -1.0, 1.0, 10);
 
@@ -239,10 +239,22 @@ public class HPSO_LSPanel extends BasicPSOPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        HPSO_LSPanel dtpanel = new HPSO_LSPanel();

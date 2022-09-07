@@ -114,6 +114,8 @@ import javax.swing.ImageIcon;
 //import javax.swing.SwingUtilities;
 //import javax.swing.UIManager;
 //import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
 
 /**
  * This java class is used to create and show the main panel of the project. The
@@ -221,7 +223,8 @@ public class MainPanel extends JPanel {
         panel_filePath.setBounds(10, 15, 825, 210);
         panel_filePath.setLayout(null);
         panel_filePath.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "File paths"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "File paths ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_dataset = new JLabel("Dataset option:");
         lbl_dataset.setBounds(15, 25, 85, 20);
         bg_dataset = new ButtonGroup();
@@ -245,21 +248,22 @@ public class MainPanel extends JPanel {
         panel_randomSet.setBounds(10, 60, 400, 140);
         panel_randomSet.setLayout(null);
         panel_randomSet.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Random training/test sets"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Random training/test sets ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_inputdst = new JLabel("Input dataset:");
         lbl_inputdst.setBounds(15, 46, 80, 15);
         lbl_classlbl = new JLabel("Input class label:");
         lbl_classlbl.setBounds(15, 82, 90, 15);
         txt_inputdst = new JTextField();
-        txt_inputdst.setBounds(110, 45, 170, 21);
+        txt_inputdst.setBounds(110, 45, 170, 24);
         txt_inputdst.setEditable(false);
         txt_classLbl = new JTextField();
-        txt_classLbl.setBounds(110, 80, 170, 21);
+        txt_classLbl.setBounds(110, 80, 170, 24);
         txt_classLbl.setEditable(false);
         btn_inputdst = new JButton("Open file...");
-        btn_inputdst.setBounds(295, 44, 87, 23);
+        btn_inputdst.setBounds(295, 44, 87, 25);
         btn_classlbl = new JButton("Open file...");
-        btn_classlbl.setBounds(295, 79, 87, 23);
+        btn_classlbl.setBounds(295, 79, 87, 25);
 
         btn_inputdst.addActionListener(eh);
         btn_classlbl.addActionListener(eh);
@@ -276,7 +280,8 @@ public class MainPanel extends JPanel {
         panel_ttSet.setBounds(415, 60, 400, 140);
         panel_ttSet.setLayout(null);
         panel_ttSet.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Training/Test sets"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Training/Test sets ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_trainSet = new JLabel("Input training set:");
         lbl_trainSet.setBounds(15, 37, 90, 15);
         lbl_testSet = new JLabel("Input test set:");
@@ -284,20 +289,20 @@ public class MainPanel extends JPanel {
         lbl_classlabel = new JLabel("Input class label:");
         lbl_classlabel.setBounds(15, 107, 90, 15);
         txt_trainSet = new JTextField();
-        txt_trainSet.setBounds(110, 35, 170, 21);
+        txt_trainSet.setBounds(110, 35, 170, 24);
         txt_trainSet.setEditable(false);
         txt_testSet = new JTextField();
-        txt_testSet.setBounds(110, 70, 170, 21);
+        txt_testSet.setBounds(110, 70, 170, 24);
         txt_testSet.setEditable(false);
         txt_classLabel = new JTextField();
-        txt_classLabel.setBounds(110, 105, 170, 21);
+        txt_classLabel.setBounds(110, 105, 170, 24);
         txt_classLabel.setEditable(false);
         btn_trainSet = new JButton("Open file...");
-        btn_trainSet.setBounds(295, 34, 87, 23);
+        btn_trainSet.setBounds(295, 34, 87, 25);
         btn_testSet = new JButton("Open file...");
-        btn_testSet.setBounds(295, 69, 87, 23);
+        btn_testSet.setBounds(295, 69, 87, 25);
         btn_classLabel = new JButton("Open file...");
-        btn_classLabel.setBounds(295, 104, 87, 23);
+        btn_classLabel.setBounds(295, 104, 87, 25);
 
         btn_trainSet.addActionListener(eh);
         btn_testSet.addActionListener(eh);
@@ -320,9 +325,10 @@ public class MainPanel extends JPanel {
         panel_featureMethod.setBounds(10, 235, 555, 160);
         panel_featureMethod.setLayout(null);
         panel_featureMethod.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Feature selection approaches"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Feature selection approaches ", TitledBorder.LEFT, TitledBorder.TOP));        
         tab_pane = new JTabbedPane();
-        tab_pane.setBounds(20, 25, 520, 120);
+        tab_pane.setBounds(5, 25, 547, 120);
 
         //--------- Filter Panel-----------------------
         panel_filter = new JPanel();
@@ -333,20 +339,20 @@ public class MainPanel extends JPanel {
         cb_supervised = new JComboBox();
         cb_supervised.setModel(new DefaultComboBoxModel(
                 SupervisedFilterType.asList()));
-        cb_supervised.setBounds(90, 20, 280, 22);
+        cb_supervised.setBounds(90, 20, 286, 25);
 
         lbl_unsup = new JLabel("Unsupervised:");
         lbl_unsup.setBounds(10, 55, 120, 22);
         cb_unsupervised = new JComboBox();
         cb_unsupervised.setModel(new DefaultComboBoxModel(
                 UnsupervisedFilterType.asList()));
-        cb_unsupervised.setBounds(90, 55, 280, 22);
+        cb_unsupervised.setBounds(90, 55, 286, 25);
 
         cb_supervised.addItemListener(eh);
         cb_unsupervised.addItemListener(eh);
 
         btn_moreOpFilter = new JButton("More option...");
-        btn_moreOpFilter.setBounds(400, 35, 105, 23);
+        btn_moreOpFilter.setBounds(400, 35, 105, 25);
         btn_moreOpFilter.setEnabled(false);
         btn_moreOpFilter.addActionListener(eh);
 
@@ -365,11 +371,11 @@ public class MainPanel extends JPanel {
         cb_wrapper = new JComboBox();
         cb_wrapper.setModel(new DefaultComboBoxModel(
                 WrapperType.asList()));
-        cb_wrapper.setBounds(90, 35, 280, 22);
+        cb_wrapper.setBounds(90, 35, 286, 25);
         cb_wrapper.addItemListener(eh);
 
         btn_moreOpWrapper = new JButton("More option...");
-        btn_moreOpWrapper.setBounds(400, 35, 105, 23);
+        btn_moreOpWrapper.setBounds(400, 35, 105, 25);
         btn_moreOpWrapper.setEnabled(false);
         btn_moreOpWrapper.addActionListener(eh);
 
@@ -386,11 +392,11 @@ public class MainPanel extends JPanel {
         cb_embedded = new JComboBox();
         cb_embedded.setModel(new DefaultComboBoxModel(
                 EmbeddedType.asList()));
-        cb_embedded.setBounds(90, 35, 280, 22);
+        cb_embedded.setBounds(90, 35, 286, 25);
         cb_embedded.addItemListener(eh);
 
         btn_moreOpEmbedded = new JButton("More option...");
-        btn_moreOpEmbedded.setBounds(400, 35, 105, 23);
+        btn_moreOpEmbedded.setBounds(400, 35, 105, 25);
         btn_moreOpEmbedded.setEnabled(false);
         btn_moreOpEmbedded.addActionListener(eh);
 
@@ -407,11 +413,11 @@ public class MainPanel extends JPanel {
         cb_hybrid = new JComboBox();
         cb_hybrid.setModel(new DefaultComboBoxModel(
                 HybridType.asList()));
-        cb_hybrid.setBounds(90, 35, 280, 22);
+        cb_hybrid.setBounds(90, 35, 286, 25);
         cb_hybrid.addItemListener(eh);
 
         btn_moreOpHybrid = new JButton("More option...");
-        btn_moreOpHybrid.setBounds(400, 35, 105, 23);
+        btn_moreOpHybrid.setBounds(400, 35, 105, 25);
         btn_moreOpHybrid.setEnabled(false);
         btn_moreOpHybrid.addActionListener(eh);
 
@@ -432,7 +438,8 @@ public class MainPanel extends JPanel {
         panel_numFeat.setBounds(580, 235, 255, 160);
         panel_numFeat.setLayout(null);
         panel_numFeat.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Numbers of selected features"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Numbers of selected features ", TitledBorder.LEFT, TitledBorder.TOP));        
         panel_numFeat.add(sc_feature);
 
         //--------- sets all panel in the Feature Panel----------
@@ -448,16 +455,17 @@ public class MainPanel extends JPanel {
         panel_classifier.setBounds(10, 405, 408, 140);
         panel_classifier.setLayout(null);
         panel_classifier.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Classifier"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Classifier ", TitledBorder.LEFT, TitledBorder.TOP));            
         cb_classifier = new JComboBox();
         cb_classifier.setModel(new DefaultComboBoxModel(
                 ClassifierType.asList()));
-        cb_classifier.setBounds(110, 40, 250, 22);
+        cb_classifier.setBounds(110, 40, 250, 25);
         lbl_classifier = new JLabel("Select classifier:");
         lbl_classifier.setBounds(15, 40, 140, 22);
 
         btn_moreOpClassifier = new JButton("More option...");
-        btn_moreOpClassifier.setBounds(140, 90, 110, 23);
+        btn_moreOpClassifier.setBounds(140, 90, 110, 25);
         btn_moreOpClassifier.setEnabled(false);
 
         btn_moreOpClassifier.addActionListener(eh);
@@ -472,19 +480,20 @@ public class MainPanel extends JPanel {
         panel_config.setBounds(428, 405, 408, 140);
         panel_config.setLayout(null);
         panel_config.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createEtchedBorder(), "Run configuration"));
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Run configuration ", TitledBorder.LEFT, TitledBorder.TOP));          
         cb_start = new JComboBox();
         cb_start.setModel(new DefaultComboBoxModel(new String[]{
             "none", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
-        cb_start.setBounds(130, 40, 200, 22);
+        cb_start.setBounds(130, 40, 200, 25);
         cb_start.addItemListener(eh);
         lbl_start = new JLabel("Number of runs:");
         lbl_start.setBounds(15, 40, 140, 22);
         btn_start = new JButton("start");
         btn_start.addActionListener(eh);
         btn_exit = new JButton("Exit");
-        btn_start.setBounds(110, 90, 80, 23);
-        btn_exit.setBounds(210, 90, 80, 23);
+        btn_start.setBounds(110, 90, 80, 25);
+        btn_exit.setBounds(210, 90, 80, 25);
         btn_exit.addActionListener(eh);
 
         panel_config.add(btn_start);
@@ -498,7 +507,6 @@ public class MainPanel extends JPanel {
         add(panel_numFeat);
         add(panel_classifier);
         add(panel_config);
-        this.setBackground(new Color(240, 240, 240));
 
         ////////////////////////////// menuBar  ///////////////////////////////
         menuBar = new JMenuBar();
@@ -2891,10 +2899,22 @@ public class MainPanel extends JPanel {
 
 //    public static void main(String[] args) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SwingUtilities.invokeLater(() -> {

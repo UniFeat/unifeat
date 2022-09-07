@@ -66,7 +66,7 @@ public class CPSOPanel extends BasicPSOPanel {
         lbl_theta = new JLabel("Parameter theta:");
         lbl_theta.setBounds(50, 450, 170, 22);
         txt_theta = new JTextField(String.valueOf(DEFAULT_THETA));
-        txt_theta.setBounds(170, 450, 120, 21);
+        txt_theta.setBounds(170, 450, 120, 24);
         txt_theta.addKeyListener(this);
         lbl_thetaError = new JLabel("");
         lbl_thetaError.setBounds(300, 450, 50, 22);
@@ -83,9 +83,9 @@ public class CPSOPanel extends BasicPSOPanel {
                 + "performance of a selected feature subset during feature selection process. </html>");
         this.setMoreOptionDescription(super.getMoreOptionDescription()
                 + "Parameter theta -> the threshold is used to determine whether a feature is selected or not.\n\n");
-        this.setOkButtonPosition(new Rectangle(190, 500, 75, 23));
-        this.setMoreButtonPosition(new Rectangle(310, 500, 75, 23));
-        this.setPanelSize(new Dimension(570, 580));
+        this.setOkButtonPosition(new Rectangle(190, 500, 75, 25));
+        this.setMoreButtonPosition(new Rectangle(310, 500, 75, 25));
+        this.setPanelSize(new Dimension(575, 580));
 
         contentPane.validate();
 //        contentPane.revalidate();
@@ -188,10 +188,22 @@ public class CPSOPanel extends BasicPSOPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        CPSOPanel dtpanel = new CPSOPanel();

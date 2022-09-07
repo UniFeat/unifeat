@@ -67,7 +67,7 @@ public class HGAFSPanel extends BasicGAPanel {
         lbl_epsilon = new JLabel("Parameter epsilon:");
         lbl_epsilon.setBounds(50, 505, 170, 22);
         txt_epsilon = new JTextField(Double.toString(DEFAULT_EPSILON));
-        txt_epsilon.setBounds(170, 505, 120, 21);
+        txt_epsilon.setBounds(170, 505, 120, 24);
         txt_epsilon.addKeyListener(this);
         lbl_epsilonError = new JLabel("");
         lbl_epsilonError.setBounds(300, 505, 50, 22);
@@ -76,7 +76,7 @@ public class HGAFSPanel extends BasicGAPanel {
         lbl_mu = new JLabel("Parameter mu:");
         lbl_mu.setBounds(50, 540, 170, 22);
         txt_mu = new JTextField(Double.toString(DEFAULT_MU));
-        txt_mu.setBounds(170, 540, 120, 21);
+        txt_mu.setBounds(170, 540, 120, 24);
         txt_mu.addKeyListener(this);
         lbl_muError = new JLabel("");
         lbl_muError.setBounds(300, 540, 50, 22);
@@ -100,9 +100,9 @@ public class HGAFSPanel extends BasicGAPanel {
                 + "Parameter epsilon -> the epsilon parameter used in the subset size determining scheme (a real number in the range of (0, 1)).\n\n"
                 + "Parameter mu -> the mu parameter used in the local search operation to control similar/dissimilar (a real number in the range of (0, 1)).\n\n");
         this.setMethodDescriptionPosition(new Rectangle(10, 35, 545, 100));
-        this.setOkButtonPosition(new Rectangle(190, 580, 75, 23));
-        this.setMoreButtonPosition(new Rectangle(310, 580, 75, 23));
-        this.setPanelSize(new Dimension(570, 660));
+        this.setOkButtonPosition(new Rectangle(190, 580, 75, 25));
+        this.setMoreButtonPosition(new Rectangle(310, 580, 75, 25));
+        this.setPanelSize(new Dimension(575, 660));
         this.changeDefaultValue(SelectionType.RANK_BASED_SELECTION, CrossOverType.TWO_POINT_CROSS_OVER,
                 MutationType.BITWISE_MUTATION, ReplacementType.TOTAL_REPLACEMENT,
                 100, 40, 0.6, 0.02, 10);
@@ -243,10 +243,22 @@ public class HGAFSPanel extends BasicGAPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        HGAFSPanel dtpanel = new HGAFSPanel();

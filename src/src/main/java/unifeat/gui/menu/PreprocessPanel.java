@@ -47,6 +47,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 //import javax.swing.UIManager;
 //import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
 
 /**
  * This java class is used to create and show a panel for preprocessing of the
@@ -73,9 +75,11 @@ public class PreprocessPanel extends JFrame
     public PreprocessPanel() {
 
         panel_about = new JPanel();
-        panel_about.setBounds(10, 30, 465, 60);
+        panel_about.setBounds(10, 30, 480, 60);
         panel_about.setLayout(null);
-        panel_about.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "About"));
+        panel_about.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "About ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_about = new JLabel("This screen lets you prepare the dataset in the UniFeat format.");
         lbl_about.setBounds(15, 2, 455, 60);
 
@@ -85,19 +89,21 @@ public class PreprocessPanel extends JFrame
         lbl_inputFile = new JLabel("Select input file:");
         lbl_inputFile.setBounds(30, 110, 110, 22);
         txt_inputFile = new JTextField();
-        txt_inputFile.setBounds(120, 110, 200, 21);
+        txt_inputFile.setBounds(120, 110, 200, 24);
         txt_inputFile.setEditable(false);
         txt_inputFile.setBackground(Color.WHITE);
         btn_selectFile = new JButton("Open file...");
-        btn_selectFile.setBounds(340, 108, 100, 23);
+        btn_selectFile.setBounds(340, 108, 100, 25);
         btn_selectFile.addActionListener(this);
 
         /////////////////////// Delimiter panel ///////////////////////////////
         panel_delimiter = new JPanel();
         panel_delimiter.setBounds(30, 160, 105, 130);
         panel_delimiter.setLayout(null);
-        panel_delimiter.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Delimiter"));
-
+        panel_delimiter.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Delimiter ", TitledBorder.LEFT, TitledBorder.TOP));
+        
         rd_tab = new JRadioButton("Tab");
         rd_tab.setBounds(10, 25, 85, 22);
         rd_semicolon = new JRadioButton("Semicolon");
@@ -126,12 +132,12 @@ public class PreprocessPanel extends JFrame
         ch_transpose.setBounds(150, 230, 380, 22);
 
         btn_save = new JButton("Save file...");
-        btn_save.setBounds(140, 310, 90, 23);
+        btn_save.setBounds(140, 310, 90, 25);
         btn_save.setEnabled(false);
         btn_save.addActionListener(this);
 
         btn_close = new JButton("Close");
-        btn_close.setBounds(250, 310, 90, 23);
+        btn_close.setBounds(250, 310, 90, 25);
         btn_close.addActionListener(this);
 
         add(panel_about);
@@ -148,7 +154,7 @@ public class PreprocessPanel extends JFrame
         add(btn_close);
 
         setLayout(null);
-        setSize(490, 380);
+        setSize(520, 385);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setIconImage(new ImageIcon(getClass().getResource("/unifeat/gui/icons/small_logo.png")).getImage());
@@ -282,9 +288,22 @@ public class PreprocessPanel extends JFrame
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        PreprocessPanel processPanel = new PreprocessPanel();

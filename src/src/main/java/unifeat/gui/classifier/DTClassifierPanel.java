@@ -67,17 +67,17 @@ public class DTClassifierPanel extends ParameterPanel {
                 + "Confidence factor -> the confidence factor used for pruning (smaller values incur more pruning).\n\n"
                 + "MinNumSample -> the minimum number of samples per leaf.\n\n",
                 new Rectangle(10, 10, 140, 20),
-                new Rectangle(10, 35, 400, 60),
-                new Rectangle(120, 220, 75, 23),
-                new Rectangle(240, 220, 75, 23),
-                new Dimension(440, 300));
+                new Rectangle(10, 35, 420, 60),
+                new Rectangle(120, 220, 75, 25),
+                new Rectangle(240, 220, 75, 25),
+                new Dimension(450, 300));
 
         Container contentPane = getContentPane();
 
         lbl_confidence = new JLabel("Confidence factor:");
         lbl_confidence.setBounds(30, 135, 120, 22);
         txt_confidence = new JTextField(String.valueOf(DEFAULT_CONFIDENCE));
-        txt_confidence.setBounds(130, 135, 120, 21);
+        txt_confidence.setBounds(130, 135, 120, 24);
         txt_confidence.addKeyListener(this);
         lbl_confidenceError = new JLabel("");
         lbl_confidenceError.setBounds(260, 135, 50, 22);
@@ -86,7 +86,7 @@ public class DTClassifierPanel extends ParameterPanel {
         lbl_minNum = new JLabel("MinNumSample:");
         lbl_minNum.setBounds(30, 170, 120, 22);
         txt_minNum = new JTextField(Integer.toString(DEFAULT_MIN_NUM));
-        txt_minNum.setBounds(130, 170, 120, 21);
+        txt_minNum.setBounds(130, 170, 120, 24);
         txt_minNum.addKeyListener(this);
         lbl_minNumError = new JLabel("");
         lbl_minNumError.setBounds(260, 170, 50, 22);
@@ -208,10 +208,22 @@ public class DTClassifierPanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SwingUtilities.invokeLater(() -> {

@@ -49,6 +49,8 @@ import unifeat.util.MathFunc;
 import javax.swing.ImageIcon;
 //import javax.swing.UIManager;
 //import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
 
 /**
  * This java class is used to create and show a panel for analyzing the results
@@ -84,28 +86,30 @@ public class FriedmanPanel extends JFrame implements ActionListener {
         lbl_insertFile = new JLabel("Insert file:");
         lbl_insertFile.setBounds(20, 35, 90, 22);
         txt_filePath = new JTextField();
-        txt_filePath.setBounds(110, 35, 210, 21);
+        txt_filePath.setBounds(110, 35, 210, 24);
         txt_filePath.setEditable(false);
         txt_filePath.setBackground(Color.WHITE);
         btn_open = new JButton("Open file...");
-        btn_open.setBounds(340, 35, 95, 23);
+        btn_open.setBounds(340, 35, 95, 25);
         btn_open.addActionListener(this);
 
         lbl_worthOfVal = new JLabel("Worth of values:");
         lbl_worthOfVal.setBounds(20, 75, 90, 22);
         cb_worthOfVal = new JComboBox(new String[]{"descending order",
                     "ascending order"});
-        cb_worthOfVal.setBounds(110, 75, 210, 22);
+        cb_worthOfVal.setBounds(110, 75, 210, 25);
         btn_performTest = new JButton("Perform test");
         btn_performTest.setEnabled(false);
         btn_performTest.addActionListener(this);
-        btn_performTest.setBounds(340, 75, 95, 23);
+        btn_performTest.setBounds(340, 75, 95, 25);
 
         /////////////////////// Friedman test panel ///////////////////////////
         panel_friedman = new JPanel();
         panel_friedman.setBounds(15, 120, 415, 170);
         panel_friedman.setLayout(null);
-        panel_friedman.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Friedman test"));
+        panel_friedman.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Friedman test ", TitledBorder.LEFT, TitledBorder.TOP));
 
         lbl_numDataset = new JLabel("Number of datasets:");
         lbl_numDataset.setBounds(15, 25, 130, 22);
@@ -141,8 +145,10 @@ public class FriedmanPanel extends JFrame implements ActionListener {
         panel_criticalValTbl = new JPanel();
         panel_criticalValTbl.setBounds(200, 20, 205, 140);
         panel_criticalValTbl.setLayout(null);
-        panel_criticalValTbl.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Critical values of the tables"));
-
+        panel_criticalValTbl.setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
+            "Critical values of the tables ", TitledBorder.LEFT, TitledBorder.TOP));
+        
         lbl_criticalVal1 = new JLabel("<html>&alpha: 0.01</html");
         lbl_criticalVal1.setBounds(20, 25, 60, 22);
 
@@ -383,9 +389,22 @@ public class FriedmanPanel extends JFrame implements ActionListener {
 
 //    public static void main(String[] args) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        FriedmanPanel app = new FriedmanPanel();

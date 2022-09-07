@@ -64,8 +64,8 @@ public class KNNClassifierPanel extends ParameterPanel {
                 + "KNN value -> the number of neighbours to use.\n\n",
                 new Rectangle(10, 10, 200, 20),
                 new Rectangle(10, 35, 400, 60),
-                new Rectangle(120, 190, 75, 23),
-                new Rectangle(240, 190, 75, 23),
+                new Rectangle(120, 190, 75, 25),
+                new Rectangle(240, 190, 75, 25),
                 new Dimension(440, 270));
 
         Container contentPane = getContentPane();
@@ -73,7 +73,7 @@ public class KNNClassifierPanel extends ParameterPanel {
         lbl_kNNValue = new JLabel("KNN value:");
         lbl_kNNValue.setBounds(30, 135, 120, 22);
         txt_kNNValue = new JTextField(String.valueOf(DEFAULT_KNN_VALUE));
-        txt_kNNValue.setBounds(130, 135, 120, 21);
+        txt_kNNValue.setBounds(130, 135, 120, 24);
         txt_kNNValue.addKeyListener(this);
         lbl_kNNValueError = new JLabel("");
         lbl_kNNValueError.setBounds(260, 135, 50, 22);
@@ -161,10 +161,22 @@ public class KNNClassifierPanel extends ParameterPanel {
 
 //    public static void main(String[] arg) {
 //        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-//            System.out.println("Error setting native LAF: " + e);
+//            // Check if Nimbus is supported and get its classname
+//            for (UIManager.LookAndFeelInfo lafInfo : UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(lafInfo.getName())) {
+//                    UIManager.setLookAndFeel(lafInfo.getClassName());
+//                    UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException eOut) {
+//            try {
+//                // If Nimbus is not available, set to the system look and feel
+//                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//                UIManager.getDefaults().put("TextArea.font", UIManager.getFont("TextField.font"));
+//            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException eIn) {
+//                System.out.println("Error setting native LAF: " + eIn);
+//            }
 //        }
 //
 //        SwingUtilities.invokeLater(() -> {
