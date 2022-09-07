@@ -30,6 +30,9 @@ import java.io.FileReader;
 //import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 //import java.util.logging.Level;
 //import java.util.logging.Logger;
 import unifeat.util.ArraysFunc;
@@ -381,14 +384,23 @@ public class DatasetInfo {
      * @param path2 the path of the class labels
      */
     public void preProcessing(String path1, String path2) {
-        init(path1, path2); //checks the correct format of the input files
-        if (checkDataSet && checkClassLabels) {
-            readExample1(); //reads the dataset file as string
-            readLabel(); //reads the class label file
-            splitFeatureWithLabel(); //converts string values of the input data to the double values
-            if (checkSamplesClass) {
-                splitDataSetToTrainAndTest1(); //randomly splits the input dataset to the train/test sets
+        try {
+            init(path1, path2); //checks the correct format of the input files
+            if (checkDataSet && checkClassLabels) {
+                readExample1(); //reads the dataset file as string
+                readLabel(); //reads the class label file
+                splitFeatureWithLabel(); //converts string values of the input data to the double values
+                if (checkSamplesClass) {
+                    splitDataSetToTrainAndTest1(); //randomly splits the input dataset to the train/test sets
+                }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error has occurred in reading the dataset. Please recheck the format of the dataset files.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+
+            Logger.getLogger(DatasetInfo.class.getName()).log(Level.SEVERE,
+                    "An error has occurred in reading the dataset. Please recheck the format of the dataset files.",
+                    e);
         }
     }
 
@@ -401,14 +413,23 @@ public class DatasetInfo {
      * @param path3 the path of the class labels
      */
     public void preProcessing(String path1, String path2, String path3) {
-        init(path1, path2, path3); //checks the correct format of the input files
-        if (checkDataSet && checkClassLabels && checkTrainTestSet) {
-            readExample2(); //reads the train/test set files as string
-            readLabel(); //reads the class label file
-            splitFeatureWithLabel(); //converts string values of the input data to the double values
-            if (checkSamplesClass) {
-                splitDataSetToTrainAndTest2(); //setts the train/test sets
+        try {
+            init(path1, path2, path3); //checks the correct format of the input files
+            if (checkDataSet && checkClassLabels && checkTrainTestSet) {
+                readExample2(); //reads the train/test set files as string
+                readLabel(); //reads the class label file
+                splitFeatureWithLabel(); //converts string values of the input data to the double values
+                if (checkSamplesClass) {
+                    splitDataSetToTrainAndTest2(); //setts the train/test sets
+                }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An error has occurred in reading the dataset. Please recheck the format of the dataset files.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+
+            Logger.getLogger(DatasetInfo.class.getName()).log(Level.SEVERE,
+                    "An error has occurred in reading the dataset. Please recheck the format of the dataset files.",
+                    e);
         }
     }
 
