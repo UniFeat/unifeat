@@ -65,21 +65,21 @@ public class OptimalACOPanel extends BasicACOPanel {
         Container contentPane = getContentPane();
 
         lbl_initPheromone = new JLabel("Initial pheromone:");
-        lbl_initPheromone.setBounds(50, 380, 170, 22);
+        lbl_initPheromone.setBounds(50, 390, 170, 22);
         txt_initPheromone = new JTextField(Double.toString(DEFAULT_INIT_PHEROMONE));
-        txt_initPheromone.setBounds(170, 380, 120, 24);
+        txt_initPheromone.setBounds(180, 390, 120, 24);
         txt_initPheromone.addKeyListener(this);
         lbl_initPheromoneError = new JLabel("");
-        lbl_initPheromoneError.setBounds(300, 380, 50, 22);
+        lbl_initPheromoneError.setBounds(310, 390, 50, 22);
         lbl_initPheromoneError.setForeground(Color.red);
 
         lbl_phi = new JLabel("Parameter phi:");
-        lbl_phi.setBounds(50, 415, 170, 22);
+        lbl_phi.setBounds(50, 425, 170, 22);
         txt_phi = new JTextField(Double.toString(DEFAULT_PHI));
-        txt_phi.setBounds(170, 415, 120, 24);
+        txt_phi.setBounds(180, 425, 120, 24);
         txt_phi.addKeyListener(this);
         lbl_phiError = new JLabel("");
-        lbl_phiError.setBounds(300, 415, 50, 22);
+        lbl_phiError.setBounds(310, 425, 50, 22);
         lbl_phiError.setForeground(Color.red);
 
         contentPane.add(lbl_initPheromone);
@@ -100,10 +100,10 @@ public class OptimalACOPanel extends BasicACOPanel {
                 + "Parameter phi -> the phi parameter in the pheromone update rule for "
                 + "controlling the relative weight of classifier performance and feature "
                 + "subset length (a real number in the range of (0, 1)).\n\n");
-        this.setMethodDescriptionPosition(new Rectangle(10, 35, 550, 90));
+        this.setMethodDescriptionPosition(new Rectangle(10, 35, 570, 100));
         this.setOkButtonPosition(new Rectangle(190, 470, 75, 25));
         this.setMoreButtonPosition(new Rectangle(310, 470, 75, 25));
-        this.setPanelSize(new Dimension(580, 560));
+        this.setPanelSize(new Dimension(600, 560));
 
         contentPane.validate();
 //        contentPane.revalidate();

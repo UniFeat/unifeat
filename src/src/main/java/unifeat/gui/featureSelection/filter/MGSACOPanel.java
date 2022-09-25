@@ -90,55 +90,55 @@ public class MGSACOPanel extends ParameterPanel {
         lbl_initPheromone = new JLabel("Initial pheromone:");
         lbl_initPheromone.setBounds(50, 135, 170, 22);
         txt_initPheromone = new JTextField(String.valueOf(DEFAULT_INIT_PHEROMONE));
-        txt_initPheromone.setBounds(170, 135, 120, 24);
+        txt_initPheromone.setBounds(180, 135, 120, 24);
         txt_initPheromone.addKeyListener(this);
         lbl_initPheromoneError = new JLabel("");
-        lbl_initPheromoneError.setBounds(300, 135, 50, 22);
+        lbl_initPheromoneError.setBounds(310, 135, 50, 22);
         lbl_initPheromoneError.setForeground(Color.red);
 
         lbl_numIteration = new JLabel("Number of iterations:");
         lbl_numIteration.setBounds(50, 170, 170, 22);
         txt_numIteration = new JTextField(String.valueOf(DEFAULT_NUM_ITERATION));
-        txt_numIteration.setBounds(170, 170, 120, 24);
+        txt_numIteration.setBounds(180, 170, 120, 24);
         txt_numIteration.addKeyListener(this);
         lbl_numIterationError = new JLabel("");
-        lbl_numIterationError.setBounds(300, 170, 50, 22);
+        lbl_numIterationError.setBounds(310, 170, 50, 22);
         lbl_numIterationError.setForeground(Color.red);
 
         lbl_numAnts = new JLabel("Number of ants:");
         lbl_numAnts.setBounds(50, 205, 170, 22);
         txt_numAnts = new JTextField(String.valueOf(DEFAULT_NUM_ANTS));
-        txt_numAnts.setBounds(170, 205, 120, 24);
+        txt_numAnts.setBounds(180, 205, 120, 24);
         txt_numAnts.addKeyListener(this);
         lbl_numAntsError = new JLabel("");
-        lbl_numAntsError.setBounds(300, 205, 50, 22);
+        lbl_numAntsError.setBounds(310, 205, 50, 22);
         lbl_numAntsError.setForeground(Color.red);
 
         lbl_evRate = new JLabel("Evaporation rate:");
         lbl_evRate.setBounds(50, 240, 170, 22);
         txt_evRate = new JTextField(String.valueOf(DEFAULT_EV_RATE));
-        txt_evRate.setBounds(170, 240, 120, 24);
+        txt_evRate.setBounds(180, 240, 120, 24);
         txt_evRate.addKeyListener(this);
         lbl_evRateError = new JLabel("");
-        lbl_evRateError.setBounds(300, 240, 50, 22);
+        lbl_evRateError.setBounds(310, 240, 50, 22);
         lbl_evRateError.setForeground(Color.red);
 
         lbl_beta = new JLabel("Parameter beta:");
         lbl_beta.setBounds(50, 275, 170, 22);
         txt_beta = new JTextField(String.valueOf(DEFAULT_BETA));
-        txt_beta.setBounds(170, 275, 120, 24);
+        txt_beta.setBounds(180, 275, 120, 24);
         txt_beta.addKeyListener(this);
         lbl_betaError = new JLabel("");
-        lbl_betaError.setBounds(300, 275, 50, 22);
+        lbl_betaError.setBounds(310, 275, 50, 22);
         lbl_betaError.setForeground(Color.red);
 
         lbl_q0 = new JLabel("Parameter q0:");
         lbl_q0.setBounds(50, 310, 170, 22);
         txt_q0 = new JTextField(String.valueOf(DEFAULT_Q0));
-        txt_q0.setBounds(170, 310, 120, 24);
+        txt_q0.setBounds(180, 310, 120, 24);
         txt_q0.addKeyListener(this);
         lbl_q0Error = new JLabel("");
-        lbl_q0Error.setBounds(300, 310, 50, 22);
+        lbl_q0Error.setBounds(310, 310, 50, 22);
         lbl_q0Error.setForeground(Color.red);
 
         contentPane.add(lbl_initPheromone);

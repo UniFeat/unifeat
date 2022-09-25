@@ -66,10 +66,10 @@ public class CPSOPanel extends BasicPSOPanel {
         lbl_theta = new JLabel("Parameter theta:");
         lbl_theta.setBounds(50, 450, 170, 22);
         txt_theta = new JTextField(String.valueOf(DEFAULT_THETA));
-        txt_theta.setBounds(170, 450, 120, 24);
+        txt_theta.setBounds(180, 450, 120, 24);
         txt_theta.addKeyListener(this);
         lbl_thetaError = new JLabel("");
-        lbl_thetaError.setBounds(300, 450, 50, 22);
+        lbl_thetaError.setBounds(310, 450, 50, 22);
         lbl_thetaError.setForeground(Color.red);
 
         contentPane.add(lbl_theta);

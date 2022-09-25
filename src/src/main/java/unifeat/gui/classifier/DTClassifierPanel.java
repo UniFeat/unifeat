@@ -66,30 +66,30 @@ public class DTClassifierPanel extends ParameterPanel {
                 "Option\n\n"
                 + "Confidence factor -> the confidence factor used for pruning (smaller values incur more pruning).\n\n"
                 + "MinNumSample -> the minimum number of samples per leaf.\n\n",
-                new Rectangle(10, 10, 140, 20),
-                new Rectangle(10, 35, 420, 60),
-                new Rectangle(120, 220, 75, 25),
-                new Rectangle(240, 220, 75, 25),
-                new Dimension(450, 300));
+                new Rectangle(10, 10, 170, 20),
+                new Rectangle(10, 35, 510, 60),
+                new Rectangle(160, 220, 75, 25),
+                new Rectangle(280, 220, 75, 25),
+                new Dimension(540, 300));
 
         Container contentPane = getContentPane();
 
         lbl_confidence = new JLabel("Confidence factor:");
         lbl_confidence.setBounds(30, 135, 120, 22);
         txt_confidence = new JTextField(String.valueOf(DEFAULT_CONFIDENCE));
-        txt_confidence.setBounds(130, 135, 120, 24);
+        txt_confidence.setBounds(150, 135, 120, 24);
         txt_confidence.addKeyListener(this);
         lbl_confidenceError = new JLabel("");
-        lbl_confidenceError.setBounds(260, 135, 50, 22);
+        lbl_confidenceError.setBounds(280, 135, 50, 22);
         lbl_confidenceError.setForeground(Color.red);
 
         lbl_minNum = new JLabel("MinNumSample:");
         lbl_minNum.setBounds(30, 170, 120, 22);
         txt_minNum = new JTextField(Integer.toString(DEFAULT_MIN_NUM));
-        txt_minNum.setBounds(130, 170, 120, 24);
+        txt_minNum.setBounds(150, 170, 120, 24);
         txt_minNum.addKeyListener(this);
         lbl_minNumError = new JLabel("");
-        lbl_minNumError.setBounds(260, 170, 50, 22);
+        lbl_minNumError.setBounds(280, 170, 50, 22);
         lbl_minNumError.setForeground(Color.red);
 
         contentPane.add(lbl_confidence);

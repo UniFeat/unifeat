@@ -80,19 +80,19 @@ public class LaplacianScorePanel extends ParameterPanel {
         lbl_KNearest = new JLabel("k-nearest neighbor:");
         lbl_KNearest.setBounds(50, 135, 170, 22);
         txt_KNearest = new JTextField(String.valueOf(DEFAULT_K_NEAREST));
-        txt_KNearest.setBounds(170, 135, 120, 24);
+        txt_KNearest.setBounds(180, 135, 120, 24);
         txt_KNearest.addKeyListener(this);
         lbl_KNearestError = new JLabel("");
-        lbl_KNearestError.setBounds(300, 135, 50, 22);
+        lbl_KNearestError.setBounds(310, 135, 50, 22);
         lbl_KNearestError.setForeground(Color.red);
 
         lbl_constParam = new JLabel("Constant parameter:");
         lbl_constParam.setBounds(50, 170, 170, 22);
         txt_constParam = new JTextField(String.valueOf(DEFAULT_CONST_PARAM));
-        txt_constParam.setBounds(170, 170, 120, 24);
+        txt_constParam.setBounds(180, 170, 120, 24);
         txt_constParam.addKeyListener(this);
         lbl_constParamError = new JLabel("");
-        lbl_constParamError.setBounds(300, 170, 50, 22);
+        lbl_constParamError.setBounds(310, 170, 50, 22);
         lbl_constParamError.setForeground(Color.red);
 
         contentPane.add(lbl_KNearest);

@@ -220,18 +220,18 @@ public class MainPanel extends JPanel {
  
         /////////////////////// "File Paths" panel ////////////////////////////
         panel_filePath = new JPanel();
-        panel_filePath.setBounds(10, 15, 825, 210);
+        panel_filePath.setBounds(10, 15, 860, 210);
         panel_filePath.setLayout(null);
         panel_filePath.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
             "File paths ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_dataset = new JLabel("Dataset option:");
-        lbl_dataset.setBounds(15, 25, 85, 20);
+        lbl_dataset.setBounds(15, 25, 100, 20);
         bg_dataset = new ButtonGroup();
         rd_randSet = new JRadioButton("Random training/test sets");
         rd_ttset = new JRadioButton("Training/Test sets");
-        rd_randSet.setBounds(105, 25, 170, 20);
-        rd_ttset.setBounds(275, 25, 195, 20);
+        rd_randSet.setBounds(120, 25, 185, 20);
+        rd_ttset.setBounds(310, 25, 195, 20);
 
         bg_dataset.add(rd_ttset);
         bg_dataset.add(rd_randSet);
@@ -245,25 +245,25 @@ public class MainPanel extends JPanel {
 
         ///////////////// "Random Training/Test sets" panel ///////////////////
         panel_randomSet = new JPanel();
-        panel_randomSet.setBounds(10, 60, 400, 140);
+        panel_randomSet.setBounds(10, 60, 415, 140);
         panel_randomSet.setLayout(null);
         panel_randomSet.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
             "Random training/test sets ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_inputdst = new JLabel("Input dataset:");
-        lbl_inputdst.setBounds(15, 46, 80, 15);
+        lbl_inputdst.setBounds(15, 46, 115, 15);
         lbl_classlbl = new JLabel("Input class label:");
-        lbl_classlbl.setBounds(15, 82, 90, 15);
+        lbl_classlbl.setBounds(15, 82, 115, 15);
         txt_inputdst = new JTextField();
-        txt_inputdst.setBounds(110, 45, 170, 24);
+        txt_inputdst.setBounds(130, 45, 170, 24);
         txt_inputdst.setEditable(false);
         txt_classLbl = new JTextField();
-        txt_classLbl.setBounds(110, 80, 170, 24);
+        txt_classLbl.setBounds(130, 80, 170, 24);
         txt_classLbl.setEditable(false);
         btn_inputdst = new JButton("Open file...");
-        btn_inputdst.setBounds(295, 44, 87, 25);
+        btn_inputdst.setBounds(305, 44, 95, 25);
         btn_classlbl = new JButton("Open file...");
-        btn_classlbl.setBounds(295, 79, 87, 25);
+        btn_classlbl.setBounds(305, 79, 95, 25);
 
         btn_inputdst.addActionListener(eh);
         btn_classlbl.addActionListener(eh);
@@ -277,32 +277,32 @@ public class MainPanel extends JPanel {
 
         ////////////////// "Training/Test sets" panel /////////////////////////
         panel_ttSet = new JPanel();
-        panel_ttSet.setBounds(415, 60, 400, 140);
+        panel_ttSet.setBounds(435, 60, 415, 140);
         panel_ttSet.setLayout(null);
         panel_ttSet.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
             "Training/Test sets ", TitledBorder.LEFT, TitledBorder.TOP));
         lbl_trainSet = new JLabel("Input training set:");
-        lbl_trainSet.setBounds(15, 37, 90, 15);
+        lbl_trainSet.setBounds(15, 37, 115, 15);
         lbl_testSet = new JLabel("Input test set:");
-        lbl_testSet.setBounds(15, 72, 80, 15);
+        lbl_testSet.setBounds(15, 72, 115, 15);
         lbl_classlabel = new JLabel("Input class label:");
-        lbl_classlabel.setBounds(15, 107, 90, 15);
+        lbl_classlabel.setBounds(15, 107, 115, 15);
         txt_trainSet = new JTextField();
-        txt_trainSet.setBounds(110, 35, 170, 24);
+        txt_trainSet.setBounds(130, 35, 170, 24);
         txt_trainSet.setEditable(false);
         txt_testSet = new JTextField();
-        txt_testSet.setBounds(110, 70, 170, 24);
+        txt_testSet.setBounds(130, 70, 170, 24);
         txt_testSet.setEditable(false);
         txt_classLabel = new JTextField();
-        txt_classLabel.setBounds(110, 105, 170, 24);
+        txt_classLabel.setBounds(130, 105, 170, 24);
         txt_classLabel.setEditable(false);
         btn_trainSet = new JButton("Open file...");
-        btn_trainSet.setBounds(295, 34, 87, 25);
+        btn_trainSet.setBounds(305, 34, 95, 25);
         btn_testSet = new JButton("Open file...");
-        btn_testSet.setBounds(295, 69, 87, 25);
+        btn_testSet.setBounds(305, 69, 95, 25);
         btn_classLabel = new JButton("Open file...");
-        btn_classLabel.setBounds(295, 104, 87, 25);
+        btn_classLabel.setBounds(305, 104, 95, 25);
 
         btn_trainSet.addActionListener(eh);
         btn_testSet.addActionListener(eh);
@@ -322,13 +322,13 @@ public class MainPanel extends JPanel {
 
         //////////////// "Feature selection methods" panel ////////////////////
         panel_featureMethod = new JPanel();
-        panel_featureMethod.setBounds(10, 235, 555, 160);
+        panel_featureMethod.setBounds(10, 235, 580, 160);
         panel_featureMethod.setLayout(null);
         panel_featureMethod.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
             "Feature selection approaches ", TitledBorder.LEFT, TitledBorder.TOP));        
         tab_pane = new JTabbedPane();
-        tab_pane.setBounds(5, 25, 547, 120);
+        tab_pane.setBounds(5, 25, 572, 120);
 
         //--------- Filter Panel-----------------------
         panel_filter = new JPanel();
@@ -339,20 +339,20 @@ public class MainPanel extends JPanel {
         cb_supervised = new JComboBox();
         cb_supervised.setModel(new DefaultComboBoxModel(
                 SupervisedFilterType.asList()));
-        cb_supervised.setBounds(90, 20, 286, 25);
+        cb_supervised.setBounds(105, 20, 315, 25);
 
         lbl_unsup = new JLabel("Unsupervised:");
         lbl_unsup.setBounds(10, 55, 120, 22);
         cb_unsupervised = new JComboBox();
         cb_unsupervised.setModel(new DefaultComboBoxModel(
                 UnsupervisedFilterType.asList()));
-        cb_unsupervised.setBounds(90, 55, 286, 25);
+        cb_unsupervised.setBounds(105, 55, 315, 25);
 
         cb_supervised.addItemListener(eh);
         cb_unsupervised.addItemListener(eh);
 
         btn_moreOpFilter = new JButton("More option...");
-        btn_moreOpFilter.setBounds(400, 35, 105, 25);
+        btn_moreOpFilter.setBounds(440, 35, 115, 25);
         btn_moreOpFilter.setEnabled(false);
         btn_moreOpFilter.addActionListener(eh);
 
@@ -371,11 +371,11 @@ public class MainPanel extends JPanel {
         cb_wrapper = new JComboBox();
         cb_wrapper.setModel(new DefaultComboBoxModel(
                 WrapperType.asList()));
-        cb_wrapper.setBounds(90, 35, 286, 25);
+        cb_wrapper.setBounds(105, 35, 315, 25);
         cb_wrapper.addItemListener(eh);
 
         btn_moreOpWrapper = new JButton("More option...");
-        btn_moreOpWrapper.setBounds(400, 35, 105, 25);
+        btn_moreOpWrapper.setBounds(440, 35, 115, 25);
         btn_moreOpWrapper.setEnabled(false);
         btn_moreOpWrapper.addActionListener(eh);
 
@@ -392,11 +392,11 @@ public class MainPanel extends JPanel {
         cb_embedded = new JComboBox();
         cb_embedded.setModel(new DefaultComboBoxModel(
                 EmbeddedType.asList()));
-        cb_embedded.setBounds(90, 35, 286, 25);
+        cb_embedded.setBounds(105, 35, 315, 25);
         cb_embedded.addItemListener(eh);
 
         btn_moreOpEmbedded = new JButton("More option...");
-        btn_moreOpEmbedded.setBounds(400, 35, 105, 25);
+        btn_moreOpEmbedded.setBounds(440, 35, 115, 25);
         btn_moreOpEmbedded.setEnabled(false);
         btn_moreOpEmbedded.addActionListener(eh);
 
@@ -413,11 +413,11 @@ public class MainPanel extends JPanel {
         cb_hybrid = new JComboBox();
         cb_hybrid.setModel(new DefaultComboBoxModel(
                 HybridType.asList()));
-        cb_hybrid.setBounds(90, 35, 286, 25);
+        cb_hybrid.setBounds(105, 35, 315, 25);
         cb_hybrid.addItemListener(eh);
 
         btn_moreOpHybrid = new JButton("More option...");
-        btn_moreOpHybrid.setBounds(400, 35, 105, 25);
+        btn_moreOpHybrid.setBounds(440, 35, 115, 25);
         btn_moreOpHybrid.setEnabled(false);
         btn_moreOpHybrid.addActionListener(eh);
 
@@ -431,11 +431,11 @@ public class MainPanel extends JPanel {
         txtArea_feature.setLineWrap(true);
 
         sc_feature = new JScrollPane();
-        sc_feature.setBounds(15, 25, 225, 120);
+        sc_feature.setBounds(15, 25, 240, 120);
         sc_feature.setViewportView(txtArea_feature);
 
         panel_numFeat = new JPanel();
-        panel_numFeat.setBounds(580, 235, 255, 160);
+        panel_numFeat.setBounds(600, 235, 270, 160);
         panel_numFeat.setLayout(null);
         panel_numFeat.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -452,7 +452,7 @@ public class MainPanel extends JPanel {
 
         ////////////////////// "Classifier" panel /////////////////////////////
         panel_classifier = new JPanel();
-        panel_classifier.setBounds(10, 405, 408, 140);
+        panel_classifier.setBounds(10, 405, 428, 140);
         panel_classifier.setLayout(null);
         panel_classifier.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -460,12 +460,12 @@ public class MainPanel extends JPanel {
         cb_classifier = new JComboBox();
         cb_classifier.setModel(new DefaultComboBoxModel(
                 ClassifierType.asList()));
-        cb_classifier.setBounds(110, 40, 250, 25);
+        cb_classifier.setBounds(120, 40, 255, 25);
         lbl_classifier = new JLabel("Select classifier:");
         lbl_classifier.setBounds(15, 40, 140, 22);
 
         btn_moreOpClassifier = new JButton("More option...");
-        btn_moreOpClassifier.setBounds(140, 90, 110, 25);
+        btn_moreOpClassifier.setBounds(140, 90, 115, 25);
         btn_moreOpClassifier.setEnabled(false);
 
         btn_moreOpClassifier.addActionListener(eh);
@@ -477,7 +477,7 @@ public class MainPanel extends JPanel {
 
         ///////////////////// "Run configuration" panel ///////////////////////
         panel_config = new JPanel();
-        panel_config.setBounds(428, 405, 408, 140);
+        panel_config.setBounds(446, 405, 424, 140);
         panel_config.setLayout(null);
         panel_config.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -572,7 +572,7 @@ public class MainPanel extends JPanel {
 
         ////////////////////////// progressBar  ///////////////////////////////
         progressBar = new JProgressBar();
-        progressBar.setBounds(10, 560, 825, 20);
+        progressBar.setBounds(10, 560, 858, 20);
         progressBar.setStringPainted(true);
         progressBar.setForeground(new Color(51, 153, 255));
         progressBar.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), ""));
@@ -2843,7 +2843,7 @@ public class MainPanel extends JPanel {
         f.setLayout(new BorderLayout());
         f.add(this, BorderLayout.CENTER);
         f.add(menuBar, BorderLayout.NORTH);
-        f.setSize(865, 660);
+        f.setSize(890, 660);
         rd_randSet.setSelected(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLocationRelativeTo(null);

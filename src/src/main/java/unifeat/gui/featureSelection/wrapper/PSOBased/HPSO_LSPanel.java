@@ -68,19 +68,19 @@ public class HPSO_LSPanel extends BasicPSOPanel {
         lbl_epsilon = new JLabel("Parameter epsilon:");
         lbl_epsilon.setBounds(50, 450, 170, 22);
         txt_epsilon = new JTextField(String.valueOf(DEFAULT_EPSILON));
-        txt_epsilon.setBounds(170, 450, 120, 24);
+        txt_epsilon.setBounds(180, 450, 120, 24);
         txt_epsilon.addKeyListener(this);
         lbl_epsilonError = new JLabel("");
-        lbl_epsilonError.setBounds(300, 450, 50, 22);
+        lbl_epsilonError.setBounds(310, 450, 50, 22);
         lbl_epsilonError.setForeground(Color.red);
 
         lbl_alpha = new JLabel("Parameter alpha:");
         lbl_alpha.setBounds(50, 485, 170, 22);
         txt_alpha = new JTextField(String.valueOf(DEFAULT_ALPHA));
-        txt_alpha.setBounds(170, 485, 120, 24);
+        txt_alpha.setBounds(180, 485, 120, 24);
         txt_alpha.addKeyListener(this);
         lbl_alphaError = new JLabel("");
-        lbl_alphaError.setBounds(300, 485, 50, 22);
+        lbl_alphaError.setBounds(310, 485, 50, 22);
         lbl_alphaError.setForeground(Color.red);
 
         contentPane.add(lbl_epsilon);

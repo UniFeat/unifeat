@@ -51,8 +51,7 @@ import javax.swing.JPanel;
 public class AboutPanel extends JDialog implements MouseListener {
 
     JLabel lbl_logo, lbl_name, lbl_descrip, lbl_ver, lbl_verVal,
-            lbl_author, lbl_authorVal, lbl_home, lbl_homVal, lbl_footer_1,
-            lbl_footer_2, lbl_footer_3, lbl_nameUni, lbl_License;
+            lbl_author, lbl_authorVal, lbl_home, lbl_homVal, lbl_footer_1;
     JPanel panel_footer;
 
     /**
@@ -68,7 +67,7 @@ public class AboutPanel extends JDialog implements MouseListener {
         lbl_name.setBounds(240, 10, 270, 90);
 
         lbl_descrip = new JLabel("<html>Universal Feature Selection Tool (UniFeat) is an open-source tool, entirely developed in Java, for performing feature selection process in different areas of research.<html>");
-        lbl_descrip.setBounds(260, 100, 375, 50);
+        lbl_descrip.setBounds(260, 100, 395, 50);
 
         lbl_ver = new JLabel("Version:");
         lbl_ver.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -88,45 +87,25 @@ public class AboutPanel extends JDialog implements MouseListener {
 
         lbl_home = new JLabel("Home Page:");
         lbl_home.setFont(new Font("Tahoma", Font.BOLD, 11));
-        lbl_home.setBounds(260, 210, 70, 15);
+        lbl_home.setBounds(260, 210, 80, 15);
 
         lbl_homVal = new JLabel("<html><a href=\"\">https://unifeat.github.io/</a></html>");
-        lbl_homVal.setBounds(340, 210, 120, 15);
+        lbl_homVal.setBounds(340, 210, 155, 15);
         lbl_homVal.setCursor(new Cursor(Cursor.HAND_CURSOR));
         lbl_homVal.addMouseListener(this);
 
         panel_footer = new JPanel();
-        panel_footer.setBounds(0, 250, 670, 45);
+        panel_footer.setBounds(0, 250, 710, 45);
         panel_footer.setLayout(null);
         panel_footer.setBackground(new Color(228, 231, 237));
 
-        lbl_footer_1 = new JLabel("UniFeat is developed at the ");
-        lbl_footer_1.setBounds(50, 10, 145, 15);
-
-        lbl_nameUni = new JLabel("<html><a href=\"\">University of Kurdistan</a></html>");
-        lbl_nameUni.setBounds(195, 10, 119, 15);
-        lbl_nameUni.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lbl_nameUni.addMouseListener(this);
-
-        lbl_footer_2 = new JLabel(", Iran, and distributed under the terms of the ");
-        lbl_footer_2.setBounds(314, 10, 230, 15);
-
-        lbl_License = new JLabel("<html><a href=\"\">MIT License</a></html>");
-        lbl_License.setBounds(545, 10, 67, 15);
-        lbl_License.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        lbl_License.addMouseListener(this);
-
-        lbl_footer_3 = new JLabel(".");
-        lbl_footer_3.setBounds(609, 10, 5, 15);
+        lbl_footer_1 = new JLabel("UniFeat is developed at the University of Kurdistan, Iran, and distributed under the terms of the MIT License.");
+        lbl_footer_1.setBounds(20, 10, 680, 15);
 
         panel_footer.add(lbl_footer_1);
-        panel_footer.add(lbl_nameUni);
-        panel_footer.add(lbl_footer_2);
-        panel_footer.add(lbl_License);
-        panel_footer.add(lbl_footer_3);
 
         setModalityType(ModalityType.APPLICATION_MODAL);
-        setSize(670, 323);
+        setSize(710, 323);
         setLayout(null);
 
         add(lbl_logo);
@@ -172,10 +151,6 @@ public class AboutPanel extends JDialog implements MouseListener {
             openURL("https://unifeat.github.io/people.html");
         } else if (e.getSource().equals(lbl_homVal)) {
             openURL("https://unifeat.github.io/");
-        } else if (e.getSource().equals(lbl_nameUni)) {
-            openURL("https://international.uok.ac.ir/en/");
-        } else if (e.getSource().equals(lbl_License)) {
-            openURL("https://github.com/UniFeat/unifeat/blob/main/LICENSE");
         }
     }
 

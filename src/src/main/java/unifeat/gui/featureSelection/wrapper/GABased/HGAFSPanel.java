@@ -67,19 +67,19 @@ public class HGAFSPanel extends BasicGAPanel {
         lbl_epsilon = new JLabel("Parameter epsilon:");
         lbl_epsilon.setBounds(50, 505, 170, 22);
         txt_epsilon = new JTextField(Double.toString(DEFAULT_EPSILON));
-        txt_epsilon.setBounds(170, 505, 120, 24);
+        txt_epsilon.setBounds(180, 505, 120, 24);
         txt_epsilon.addKeyListener(this);
         lbl_epsilonError = new JLabel("");
-        lbl_epsilonError.setBounds(300, 505, 50, 22);
+        lbl_epsilonError.setBounds(310, 505, 50, 22);
         lbl_epsilonError.setForeground(Color.red);
 
         lbl_mu = new JLabel("Parameter mu:");
         lbl_mu.setBounds(50, 540, 170, 22);
         txt_mu = new JTextField(Double.toString(DEFAULT_MU));
-        txt_mu.setBounds(170, 540, 120, 24);
+        txt_mu.setBounds(180, 540, 120, 24);
         txt_mu.addKeyListener(this);
         lbl_muError = new JLabel("");
-        lbl_muError.setBounds(300, 540, 50, 22);
+        lbl_muError.setBounds(310, 540, 50, 22);
         lbl_muError.setForeground(Color.red);
 
         contentPane.add(lbl_epsilon);

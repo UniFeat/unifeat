@@ -68,26 +68,26 @@ public class SVMClassifierPanel extends ParameterPanel {
                 "Option\n\n"
                 + "Kernel -> the kernel to use.\n\n"
                 + "Parameter c -> The complexity parameter C.\n\n",
-                new Rectangle(10, 10, 175, 20),
-                new Rectangle(10, 35, 400, 60),
-                new Rectangle(120, 225, 75, 25),
-                new Rectangle(240, 225, 75, 25),
-                new Dimension(440, 315));
+                new Rectangle(10, 10, 215, 20),
+                new Rectangle(10, 35, 470, 60),
+                new Rectangle(150, 225, 75, 25),
+                new Rectangle(270, 225, 75, 25),
+                new Dimension(500, 315));
 
         Container contentPane = getContentPane();
 
         lbl_kernel = new JLabel("Kernel:");
         lbl_kernel.setBounds(50, 135, 120, 22);
         cb_kernel = new JComboBox(SVMKernelType.asList());
-        cb_kernel.setBounds(120, 135, 250, 25);
+        cb_kernel.setBounds(130, 135, 285, 25);
 
         lbl_parameterC = new JLabel("Parameter c:");
         lbl_parameterC.setBounds(50, 170, 170, 22);
         txt_parameterC = new JTextField(Double.toString(DEFAULT_PARAMETER_C));
-        txt_parameterC.setBounds(120, 170, 120, 24);
+        txt_parameterC.setBounds(130, 170, 130, 24);
         txt_parameterC.addKeyListener(this);
         lbl_parameterCError = new JLabel("");
-        lbl_parameterCError.setBounds(250, 170, 50, 22);
+        lbl_parameterCError.setBounds(265, 170, 50, 22);
         lbl_parameterCError.setForeground(Color.red);
 
         contentPane.add(lbl_kernel);

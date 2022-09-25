@@ -59,25 +59,25 @@ public class SelectModePanel extends JDialog implements ActionListener {
 
         setNameMode(SelectModeType.NONE);
         lbl_selectMode = new JLabel("Selects a mode:");
-        lbl_selectMode.setBounds(20, 40, 90, 22);
+        lbl_selectMode.setBounds(20, 40, 110, 22);
 
         rd_average = new JRadioButton("Average of all iteration");
-        rd_average.setBounds(110, 30, 170, 20);
+        rd_average.setBounds(125, 30, 170, 20);
         rd_average.setSelected(true);
         rd_total = new JRadioButton("Total results of each iteration");
-        rd_total.setBounds(110, 60, 195, 20);
+        rd_total.setBounds(125, 60, 210, 20);
 
         bg_mode = new ButtonGroup();
         bg_mode.add(rd_average);
         bg_mode.add(rd_total);
 
         btn_ok = new JButton("Ok");
-        btn_ok.setBounds(110, 110, 70, 25);
+        btn_ok.setBounds(125, 110, 70, 25);
         btn_ok.addActionListener(this);
 
 
         setModalityType(ModalityType.APPLICATION_MODAL);
-        setSize(310, 190);
+        setSize(340, 190);
         setLayout(null);
 
         add(rd_average);

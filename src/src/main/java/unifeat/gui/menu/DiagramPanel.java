@@ -191,7 +191,7 @@ public class DiagramPanel extends JPanel implements ActionListener, MouseMotionL
         f.add(this);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.setIconImage(new ImageIcon(getClass().getResource("/unifeat/gui/icons/small_logo.png")).getImage());
-        f.setSize(530, 380);
+        f.setSize(540, 380);
         f.addMouseMotionListener(this);
         f.setLocationRelativeTo(null);
         f.setResizable(false);
@@ -356,7 +356,7 @@ public class DiagramPanel extends JPanel implements ActionListener, MouseMotionL
         //draw framework of legend
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.black);
-        g2d.drawLine(X_D_START_LEGEND, Y_DIMENSION_START, X_D_START_LEGEND + WIDTH_LEGEND + 5, Y_DIMENSION_START); //draw up horizontal line(-)
+        g2d.drawLine(X_D_START_LEGEND, Y_DIMENSION_START, X_D_START_LEGEND + WIDTH_LEGEND + 15, Y_DIMENSION_START); //draw up horizontal line(-)
 
         //draw String title
         g2d.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -379,8 +379,8 @@ public class DiagramPanel extends JPanel implements ActionListener, MouseMotionL
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.black);
         int EndLegend = (LIST_ITERATION.length * height) + Y_D_START_LEGEND - (height / 2);
-        g2d.drawLine(X_D_START_LEGEND + WIDTH_LEGEND + 5, Y_DIMENSION_START, X_D_START_LEGEND + WIDTH_LEGEND + 5, EndLegend); //draw right vertical line(|)
-        g2d.drawLine(X_D_START_LEGEND, EndLegend, X_D_START_LEGEND + WIDTH_LEGEND + 5, EndLegend); //draw down horizontal line(-)
+        g2d.drawLine(X_D_START_LEGEND + WIDTH_LEGEND + 15, Y_DIMENSION_START, X_D_START_LEGEND + WIDTH_LEGEND + 15, EndLegend); //draw right vertical line(|)
+        g2d.drawLine(X_D_START_LEGEND, EndLegend, X_D_START_LEGEND + WIDTH_LEGEND + 15, EndLegend); //draw down horizontal line(-)
         g2d.drawLine(X_D_START_LEGEND, Y_DIMENSION_START, X_D_START_LEGEND, EndLegend); //draw left vertical line(|)
     }
 

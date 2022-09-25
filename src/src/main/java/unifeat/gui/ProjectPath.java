@@ -67,18 +67,18 @@ public class ProjectPath extends JFrame implements ActionListener {
         mainPanel.setLayout(null);
 
         lbl_select = new JLabel("Please select a folder for the tool:");
-        lbl_select.setBounds(20, 30, 204, 14);
+        lbl_select.setBounds(20, 30, 214, 14);
 
         lbl_path = new JLabel("Folder:");
-        lbl_path.setBounds(20, 70, 40, 14);
+        lbl_path.setBounds(20, 70, 45, 14);
 
         txt_path = new JTextField();
-        txt_path.setBounds(60, 67, 180, 24);
+        txt_path.setBounds(70, 67, 180, 24);
         txt_path.setBackground(Color.WHITE);
         txt_path.setEditable(false);
 
         btn_browse = new JButton("Browse...");
-        btn_browse.setBounds(250, 66, 80, 25);
+        btn_browse.setBounds(255, 66, 85, 25);
         btn_browse.addActionListener(this);
 
         btn_select = new JButton("Ok");

@@ -75,10 +75,10 @@ public class RRFSPanel extends ParameterPanel {
         lbl_similarity = new JLabel("Similarity threshold:");
         lbl_similarity.setBounds(50, 135, 170, 22);
         txt_similarity = new JTextField(String.valueOf(DEFAULT_SIMILARITY));
-        txt_similarity.setBounds(155, 135, 120, 24);
+        txt_similarity.setBounds(175, 135, 120, 24);
         txt_similarity.addKeyListener(this);
         lbl_similarityError = new JLabel("");
-        lbl_similarityError.setBounds(285, 135, 50, 22);
+        lbl_similarityError.setBounds(305, 135, 50, 22);
         lbl_similarityError.setForeground(Color.red);
 
         contentPane.add(lbl_similarity);

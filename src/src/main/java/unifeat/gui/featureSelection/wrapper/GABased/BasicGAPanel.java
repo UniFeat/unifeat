@@ -123,11 +123,11 @@ public abstract class BasicGAPanel extends ParameterPanel
         cb_classifierType = new JComboBox();
         cb_classifierType.setModel(new DefaultComboBoxModel(ClassifierType.asList()));
         cb_classifierType.setSelectedIndex(ClassifierType.NB.getValue());
-        cb_classifierType.setBounds(170, 155, 180, 25);
+        cb_classifierType.setBounds(180, 155, 210, 25);
         cb_classifierType.addItemListener(this);
 
         btn_classifierType = new JButton("More option...");
-        btn_classifierType.setBounds(360, 155, 105, 25);
+        btn_classifierType.setBounds(400, 155, 120, 25);
         btn_classifierType.setEnabled(false);
         btn_classifierType.addActionListener(this);
 
@@ -136,7 +136,7 @@ public abstract class BasicGAPanel extends ParameterPanel
         cb_selectionType = new JComboBox();
         cb_selectionType.setModel(new DefaultComboBoxModel(SelectionType.commonAsList()));
         cb_selectionType.setSelectedIndex(SelectionType.FITNESS_PROPORTIONAL_SELECTION.getValue());
-        cb_selectionType.setBounds(170, 190, 180, 25);
+        cb_selectionType.setBounds(180, 190, 210, 25);
         cb_selectionType.addItemListener(this);
 
         lbl_crossoverType = new JLabel("Crossover type:");
@@ -144,7 +144,7 @@ public abstract class BasicGAPanel extends ParameterPanel
         cb_crossoverType = new JComboBox();
         cb_crossoverType.setModel(new DefaultComboBoxModel(CrossOverType.commonAsList()));
         cb_crossoverType.setSelectedIndex(CrossOverType.ONE_POINT_CROSS_OVER.getValue());
-        cb_crossoverType.setBounds(170, 225, 180, 25);
+        cb_crossoverType.setBounds(180, 225, 210, 25);
         cb_crossoverType.addItemListener(this);
 
         lbl_mutationType = new JLabel("Mutation type:");
@@ -152,7 +152,7 @@ public abstract class BasicGAPanel extends ParameterPanel
         cb_mutationType = new JComboBox();
         cb_mutationType.setModel(new DefaultComboBoxModel(MutationType.commonAsList()));
         cb_mutationType.setSelectedIndex(MutationType.BITWISE_MUTATION.getValue());
-        cb_mutationType.setBounds(170, 260, 180, 25);
+        cb_mutationType.setBounds(180, 260, 210, 25);
         cb_mutationType.addItemListener(this);
 
         lbl_replacementType = new JLabel("Replacement type:");
@@ -160,52 +160,52 @@ public abstract class BasicGAPanel extends ParameterPanel
         cb_replacementType = new JComboBox();
         cb_replacementType.setModel(new DefaultComboBoxModel(ReplacementType.commonAsList()));
         cb_replacementType.setSelectedIndex(ReplacementType.TOTAL_REPLACEMENT.getValue());
-        cb_replacementType.setBounds(170, 295, 180, 25);
+        cb_replacementType.setBounds(180, 295, 210, 25);
         cb_replacementType.addItemListener(this);
 
         lbl_numIteration = new JLabel("Number of iterations:");
         lbl_numIteration.setBounds(50, 330, 170, 22);
         txt_numIteration = new JTextField(Integer.toString(DEFAULT_NUM_ITERATION));
-        txt_numIteration.setBounds(170, 330, 120, 24);
+        txt_numIteration.setBounds(180, 330, 120, 24);
         txt_numIteration.addKeyListener(this);
         lbl_numIterationError = new JLabel("");
-        lbl_numIterationError.setBounds(300, 330, 50, 22);
+        lbl_numIterationError.setBounds(310, 330, 50, 22);
         lbl_numIterationError.setForeground(Color.red);
 
         lbl_populationSize = new JLabel("Population size:");
         lbl_populationSize.setBounds(50, 365, 170, 22);
         txt_populationSize = new JTextField(Integer.toString(DEFAULT_POPULATION_SIZE));
-        txt_populationSize.setBounds(170, 365, 120, 24);
+        txt_populationSize.setBounds(180, 365, 120, 24);
         txt_populationSize.addKeyListener(this);
         lbl_populationSizeError = new JLabel("");
-        lbl_populationSizeError.setBounds(300, 365, 50, 22);
+        lbl_populationSizeError.setBounds(310, 365, 50, 22);
         lbl_populationSizeError.setForeground(Color.red);
 
         lbl_crossoverRate = new JLabel("Crossover rate:");
         lbl_crossoverRate.setBounds(50, 400, 170, 22);
         txt_crossoverRate = new JTextField(Double.toString(DEFAULT_CROSSOVER_RATE));
-        txt_crossoverRate.setBounds(170, 400, 120, 24);
+        txt_crossoverRate.setBounds(180, 400, 120, 24);
         txt_crossoverRate.addKeyListener(this);
         lbl_crossoverRateError = new JLabel("");
-        lbl_crossoverRateError.setBounds(300, 400, 50, 22);
+        lbl_crossoverRateError.setBounds(310, 400, 50, 22);
         lbl_crossoverRateError.setForeground(Color.red);
 
         lbl_mutationRate = new JLabel("Mutation rate:");
         lbl_mutationRate.setBounds(50, 435, 170, 22);
         txt_mutationRate = new JTextField(Double.toString(DEFAULT_MUTATION_RATE));
-        txt_mutationRate.setBounds(170, 435, 120, 24);
+        txt_mutationRate.setBounds(180, 435, 120, 24);
         txt_mutationRate.addKeyListener(this);
         lbl_mutationRateError = new JLabel("");
-        lbl_mutationRateError.setBounds(300, 435, 50, 22);
+        lbl_mutationRateError.setBounds(310, 435, 50, 22);
         lbl_mutationRateError.setForeground(Color.red);
 
         lbl_kFolds = new JLabel("Folds:");
         lbl_kFolds.setBounds(50, 470, 170, 22);
         txt_kFolds = new JTextField(Integer.toString(DEFAULT_K_FOLDS));
-        txt_kFolds.setBounds(170, 470, 120, 24);
+        txt_kFolds.setBounds(180, 470, 120, 24);
         txt_kFolds.addKeyListener(this);
         lbl_kFoldsError = new JLabel("");
-        lbl_kFoldsError.setBounds(300, 470, 50, 22);
+        lbl_kFoldsError.setBounds(310, 470, 50, 22);
         lbl_kFoldsError.setForeground(Color.red);
 
         contentPane.add(lbl_classifierType);

@@ -76,44 +76,44 @@ public class RSMPanel extends ParameterPanel {
                 + "Elimination threshold -> determines the number of relevant features in the selected subspace (0 means the elimination threshold is set to half of the size of subspace).\n\n"
                 + "Multivariate method -> the name of multivariate feature selection method applied in the algorithm.\n\n",
                 new Rectangle(10, 10, 450, 20),
-                new Rectangle(10, 35, 490, 80),
-                new Rectangle(160, 290, 75, 25),
-                new Rectangle(280, 290, 75, 25),
-                new Dimension(520, 380));
+                new Rectangle(10, 35, 510, 80),
+                new Rectangle(170, 290, 75, 25),
+                new Rectangle(290, 290, 75, 25),
+                new Dimension(540, 380));
 
         Container contentPane = getContentPane();
 
         lbl_numSelection = new JLabel("Number of selections:");
         lbl_numSelection.setBounds(50, 135, 170, 22);
         txt_numSelection = new JTextField(String.valueOf(DEFAULT_NUM_SELECTION));
-        txt_numSelection.setBounds(170, 135, 120, 24);
+        txt_numSelection.setBounds(190, 135, 120, 24);
         txt_numSelection.addKeyListener(this);
         lbl_numSelectionError = new JLabel("");
-        lbl_numSelectionError.setBounds(300, 135, 50, 22);
+        lbl_numSelectionError.setBounds(320, 135, 50, 22);
         lbl_numSelectionError.setForeground(Color.red);
 
         lbl_sizeSubspace = new JLabel("Size of subspace:");
         lbl_sizeSubspace.setBounds(50, 170, 170, 22);
         txt_sizeSubspace = new JTextField(Integer.toString(DEFAULT_SIZE_SUBSPACE));
-        txt_sizeSubspace.setBounds(170, 170, 120, 24);
+        txt_sizeSubspace.setBounds(190, 170, 120, 24);
         txt_sizeSubspace.addKeyListener(this);
         lbl_sizeSubspaceError = new JLabel("");
-        lbl_sizeSubspaceError.setBounds(300, 170, 50, 22);
+        lbl_sizeSubspaceError.setBounds(320, 170, 50, 22);
         lbl_sizeSubspaceError.setForeground(Color.red);
 
         lbl_elimination = new JLabel("Elimination threshold:");
         lbl_elimination.setBounds(50, 205, 170, 22);
         txt_elimination = new JTextField(Integer.toString(DEFAULT_ELIMINATION));
-        txt_elimination.setBounds(170, 205, 120, 24);
+        txt_elimination.setBounds(190, 205, 120, 24);
         txt_elimination.addKeyListener(this);
         lbl_eliminationError = new JLabel("");
-        lbl_eliminationError.setBounds(300, 205, 50, 22);
+        lbl_eliminationError.setBounds(320, 205, 50, 22);
         lbl_eliminationError.setForeground(Color.red);
 
         lbl_multivalMethod = new JLabel("Multivariate method:");
         lbl_multivalMethod.setBounds(50, 240, 170, 22);
         cb_multivalMethod = new JComboBox(MultivariateMethodType.asList());
-        cb_multivalMethod.setBounds(170, 240, 130, 25);
+        cb_multivalMethod.setBounds(190, 240, 150, 25);
 
         contentPane.add(lbl_numSelection);
         contentPane.add(txt_numSelection);

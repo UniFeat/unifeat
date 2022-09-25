@@ -86,26 +86,26 @@ public class FriedmanPanel extends JFrame implements ActionListener {
         lbl_insertFile = new JLabel("Insert file:");
         lbl_insertFile.setBounds(20, 35, 90, 22);
         txt_filePath = new JTextField();
-        txt_filePath.setBounds(110, 35, 210, 24);
+        txt_filePath.setBounds(125, 35, 210, 24);
         txt_filePath.setEditable(false);
         txt_filePath.setBackground(Color.WHITE);
         btn_open = new JButton("Open file...");
-        btn_open.setBounds(340, 35, 95, 25);
+        btn_open.setBounds(350, 35, 110, 25);
         btn_open.addActionListener(this);
 
         lbl_worthOfVal = new JLabel("Worth of values:");
-        lbl_worthOfVal.setBounds(20, 75, 90, 22);
+        lbl_worthOfVal.setBounds(20, 75, 105, 22);
         cb_worthOfVal = new JComboBox(new String[]{"descending order",
                     "ascending order"});
-        cb_worthOfVal.setBounds(110, 75, 210, 25);
+        cb_worthOfVal.setBounds(125, 75, 210, 25);
         btn_performTest = new JButton("Perform test");
         btn_performTest.setEnabled(false);
         btn_performTest.addActionListener(this);
-        btn_performTest.setBounds(340, 75, 95, 25);
+        btn_performTest.setBounds(350, 75, 110, 25);
 
         /////////////////////// Friedman test panel ///////////////////////////
         panel_friedman = new JPanel();
-        panel_friedman.setBounds(15, 120, 415, 170);
+        panel_friedman.setBounds(15, 120, 455, 170);
         panel_friedman.setLayout(null);
         panel_friedman.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -114,22 +114,22 @@ public class FriedmanPanel extends JFrame implements ActionListener {
         lbl_numDataset = new JLabel("Number of datasets:");
         lbl_numDataset.setBounds(15, 25, 130, 22);
         lbl_numDatasetVal = new JLabel("0");
-        lbl_numDatasetVal.setBounds(130, 25, 30, 22);
+        lbl_numDatasetVal.setBounds(145, 25, 30, 22);
 
         lbl_numMethod = new JLabel("Number of methods:");
         lbl_numMethod.setBounds(15, 60, 130, 22);
         lbl_numMethodVal = new JLabel("0");
-        lbl_numMethodVal.setBounds(130, 60, 30, 22);
+        lbl_numMethodVal.setBounds(145, 60, 30, 22);
 
         lbl_chi_square = new JLabel("Chi-square:");
         lbl_chi_square.setBounds(15, 95, 130, 22);
         lbl_chi_squareVal = new JLabel("0");
-        lbl_chi_squareVal.setBounds(130, 95, 60, 22);
+        lbl_chi_squareVal.setBounds(145, 95, 60, 22);
 
         lbl_fdistribution = new JLabel("F-distribution:");
         lbl_fdistribution.setBounds(15, 130, 130, 22);
         lbl_fdistributionVal = new JLabel("0");
-        lbl_fdistributionVal.setBounds(130, 130, 60, 22);
+        lbl_fdistributionVal.setBounds(145, 130, 60, 22);
 
         panel_friedman.add(lbl_numDataset);
         panel_friedman.add(lbl_numDatasetVal);
@@ -143,7 +143,7 @@ public class FriedmanPanel extends JFrame implements ActionListener {
 
         /////////////////////// Critical value panel //////////////////////////
         panel_criticalValTbl = new JPanel();
-        panel_criticalValTbl.setBounds(200, 20, 205, 140);
+        panel_criticalValTbl.setBounds(220, 20, 225, 140);
         panel_criticalValTbl.setLayout(null);
         panel_criticalValTbl.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -190,8 +190,7 @@ public class FriedmanPanel extends JFrame implements ActionListener {
 
 
         setLayout(null);
-        //setSize(460, 460);
-        setSize(460, 350);
+        setSize(490, 350);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Friedman Test Panel");

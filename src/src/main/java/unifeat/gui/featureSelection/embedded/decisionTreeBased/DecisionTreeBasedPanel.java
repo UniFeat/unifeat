@@ -60,8 +60,8 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
             + "Confidence factor -> the confidence factor used for pruning (smaller values incur more pruning).\n\n"
             + "MinNumSample -> the minimum number of samples per leaf.\n\n";
     private static final Dimension C45_PANEL_SIZE = new Dimension(480, 360);
-    private static final Rectangle C45_OK_BUTTON_POSITION = new Rectangle(120, 270, 75, 25);
-    private static final Rectangle C45_MORE_BUTTON_POSITION = new Rectangle(240, 270, 75, 25);
+    private static final Rectangle C45_OK_BUTTON_POSITION = new Rectangle(140, 270, 75, 25);
+    private static final Rectangle C45_MORE_BUTTON_POSITION = new Rectangle(260, 270, 75, 25);
     private JLabel lbl_confidence, lbl_minNum, lbl_confidenceError, lbl_minNumError;
     private JTextField txt_confidence, txt_minNum;
     private static final double DEFAULT_CONFIDENCE = 0.25;
@@ -113,7 +113,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
                 "<html> In C4.5 and random tree, first of all, the tree will be constructed using a collection of patterns, and then the features"
                 + " which are involved in the classification are selected as a final feature subset. </html>",
                 C45_MORE_OPTION,
-                new Rectangle(10, 10, 140, 20),
+                new Rectangle(10, 10, 160, 20),
                 new Rectangle(10, 35, 450, 80),
                 C45_OK_BUTTON_POSITION,
                 C45_MORE_BUTTON_POSITION,
@@ -125,7 +125,7 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_treeType.setBounds(30, 155, 120, 22);
         cb_treeType = new JComboBox();
         cb_treeType.setModel(new DefaultComboBoxModel(TreeType.asList()));
-        cb_treeType.setBounds(130, 155, 200, 25);
+        cb_treeType.setBounds(150, 155, 200, 25);
         cb_treeType.addItemListener((ItemEvent e) -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 treeType = TreeType.parse(cb_treeType.getSelectedItem().toString());
@@ -138,84 +138,84 @@ public class DecisionTreeBasedPanel extends ParameterPanel {
         lbl_confidence = new JLabel("Confidence factor:");
         lbl_confidence.setBounds(30, 190, 120, 22);
         txt_confidence = new JTextField(String.valueOf(DEFAULT_CONFIDENCE));
-        txt_confidence.setBounds(130, 190, 120, 24);
+        txt_confidence.setBounds(150, 190, 120, 24);
         txt_confidence.addKeyListener(this);
         lbl_confidenceError = new JLabel("");
-        lbl_confidenceError.setBounds(260, 190, 50, 22);
+        lbl_confidenceError.setBounds(280, 190, 50, 22);
         lbl_confidenceError.setForeground(Color.red);
 
         lbl_minNum = new JLabel("MinNumSample:");
         lbl_minNum.setBounds(30, 225, 120, 22);
         txt_minNum = new JTextField(Integer.toString(DEFAULT_MIN_NUM));
-        txt_minNum.setBounds(130, 225, 120, 24);
+        txt_minNum.setBounds(150, 225, 120, 24);
         txt_minNum.addKeyListener(this);
         lbl_minNumError = new JLabel("");
-        lbl_minNumError.setBounds(260, 225, 50, 22);
+        lbl_minNumError.setBounds(280, 225, 50, 22);
         lbl_minNumError.setForeground(Color.red);
 
         //Random Tree initial components
         lbl_randomTreeKValue = new JLabel("K value:");
         lbl_randomTreeKValue.setBounds(30, 190, 120, 22);
         txt_randomTreeKValue = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_K_VALUE));
-        txt_randomTreeKValue.setBounds(130, 190, 120, 24);
+        txt_randomTreeKValue.setBounds(150, 190, 120, 24);
         txt_randomTreeKValue.addKeyListener(this);
         lbl_randomTreeKValueError = new JLabel("");
-        lbl_randomTreeKValueError.setBounds(260, 190, 50, 22);
+        lbl_randomTreeKValueError.setBounds(280, 190, 50, 22);
         lbl_randomTreeKValueError.setForeground(Color.red);
 
         lbl_randomTreeMaxDepth = new JLabel("Max depth:");
         lbl_randomTreeMaxDepth.setBounds(30, 225, 120, 22);
         txt_randomTreeMaxDepth = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MAX_DEPTH));
-        txt_randomTreeMaxDepth.setBounds(130, 225, 120, 24);
+        txt_randomTreeMaxDepth.setBounds(150, 225, 120, 24);
         txt_randomTreeMaxDepth.addKeyListener(this);
         lbl_randomTreeMaxDepthError = new JLabel("");
-        lbl_randomTreeMaxDepthError.setBounds(260, 225, 50, 22);
+        lbl_randomTreeMaxDepthError.setBounds(280, 225, 50, 22);
         lbl_randomTreeMaxDepthError.setForeground(Color.red);
 
         lbl_randomTreeMinNum = new JLabel("MinNum:");
         lbl_randomTreeMinNum.setBounds(30, 260, 120, 22);
         txt_randomTreeMinNum = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MIN_NUM));
-        txt_randomTreeMinNum.setBounds(130, 260, 120, 24);
+        txt_randomTreeMinNum.setBounds(150, 260, 120, 24);
         txt_randomTreeMinNum.addKeyListener(this);
         lbl_randomTreeMinNumError = new JLabel("");
-        lbl_randomTreeMinNumError.setBounds(260, 260, 50, 22);
+        lbl_randomTreeMinNumError.setBounds(280, 260, 50, 22);
         lbl_randomTreeMinNumError.setForeground(Color.red);
 
         lbl_randomTreeMinVarianceProp = new JLabel("Min Variance Prop:");
         lbl_randomTreeMinVarianceProp.setBounds(30, 295, 120, 22);
         txt_randomTreeMinVarianceProp = new JTextField(String.valueOf(DEFAULT_RANDOM_TREE_MIN_VARIANCE_PROP));
-        txt_randomTreeMinVarianceProp.setBounds(130, 295, 120, 24);
+        txt_randomTreeMinVarianceProp.setBounds(150, 295, 120, 24);
         txt_randomTreeMinVarianceProp.addKeyListener(this);
         lbl_randomTreeMinVariancePropError = new JLabel("");
-        lbl_randomTreeMinVariancePropError.setBounds(260, 295, 50, 22);
+        lbl_randomTreeMinVariancePropError.setBounds(280, 295, 50, 22);
         lbl_randomTreeMinVariancePropError.setForeground(Color.red);
 
         //Random Forest initial components
         lbl_randomForestNumFeatures = new JLabel("Num features:");
         lbl_randomForestNumFeatures.setBounds(30, 190, 120, 22);
         txt_randomForestNumFeatures = new JTextField(String.valueOf(DEFAULT_RANDOM_FOREST_NUM_FEATURES));
-        txt_randomForestNumFeatures.setBounds(130, 190, 120, 24);
+        txt_randomForestNumFeatures.setBounds(150, 190, 120, 24);
         txt_randomForestNumFeatures.addKeyListener(this);
         lbl_randomForestNumFeaturesError = new JLabel("");
-        lbl_randomForestNumFeaturesError.setBounds(260, 190, 50, 22);
+        lbl_randomForestNumFeaturesError.setBounds(280, 190, 50, 22);
         lbl_randomForestNumFeaturesError.setForeground(Color.red);
 
         lbl_maxDepth = new JLabel("Max depth:");
         lbl_maxDepth.setBounds(30, 225, 120, 22);
         txt_maxDepth = new JTextField(Integer.toString(DEFAULT_MAX_DEPTH));
-        txt_maxDepth.setBounds(130, 225, 120, 24);
+        txt_maxDepth.setBounds(150, 225, 120, 24);
         txt_maxDepth.addKeyListener(this);
         lbl_maxDepthError = new JLabel("");
-        lbl_maxDepthError.setBounds(260, 225, 50, 22);
+        lbl_maxDepthError.setBounds(280, 225, 50, 22);
         lbl_maxDepthError.setForeground(Color.red);
 
         lbl_randomForestNumIterations = new JLabel("Num iterations:");
         lbl_randomForestNumIterations.setBounds(30, 260, 120, 22);
         txt_randomForestNumIterations = new JTextField(Integer.toString(DEFAULT_RANDOM_FOREST_NUM_ITERATION));
-        txt_randomForestNumIterations.setBounds(130, 260, 120, 24);
+        txt_randomForestNumIterations.setBounds(150, 260, 120, 24);
         txt_randomForestNumIterations.addKeyListener(this);
         lbl_randomForestNumIterationsError = new JLabel("");
-        lbl_randomForestNumIterationsError.setBounds(260, 260, 50, 22);
+        lbl_randomForestNumIterationsError.setBounds(280, 260, 50, 22);
         lbl_randomForestNumIterationsError.setForeground(Color.red);
 
         contentPane.add(lbl_treeType);

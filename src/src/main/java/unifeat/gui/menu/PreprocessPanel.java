@@ -75,7 +75,7 @@ public class PreprocessPanel extends JFrame
     public PreprocessPanel() {
 
         panel_about = new JPanel();
-        panel_about.setBounds(10, 30, 480, 60);
+        panel_about.setBounds(10, 30, 530, 60);
         panel_about.setLayout(null);
         panel_about.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -89,16 +89,16 @@ public class PreprocessPanel extends JFrame
         lbl_inputFile = new JLabel("Select input file:");
         lbl_inputFile.setBounds(30, 110, 110, 22);
         txt_inputFile = new JTextField();
-        txt_inputFile.setBounds(120, 110, 200, 24);
+        txt_inputFile.setBounds(135, 110, 200, 24);
         txt_inputFile.setEditable(false);
         txt_inputFile.setBackground(Color.WHITE);
         btn_selectFile = new JButton("Open file...");
-        btn_selectFile.setBounds(340, 108, 100, 25);
+        btn_selectFile.setBounds(350, 108, 100, 25);
         btn_selectFile.addActionListener(this);
 
         /////////////////////// Delimiter panel ///////////////////////////////
         panel_delimiter = new JPanel();
-        panel_delimiter.setBounds(30, 160, 105, 130);
+        panel_delimiter.setBounds(30, 160, 110, 130);
         panel_delimiter.setLayout(null);
         panel_delimiter.setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createSoftBevelBorder(BevelBorder.LOWERED),
@@ -107,7 +107,7 @@ public class PreprocessPanel extends JFrame
         rd_tab = new JRadioButton("Tab");
         rd_tab.setBounds(10, 25, 85, 22);
         rd_semicolon = new JRadioButton("Semicolon");
-        rd_semicolon.setBounds(10, 50, 85, 22);
+        rd_semicolon.setBounds(10, 50, 90, 22);
         rd_space = new JRadioButton("Space");
         rd_space.setBounds(10, 75, 85, 22);
         rd_comma = new JRadioButton("Comma");
@@ -129,15 +129,15 @@ public class PreprocessPanel extends JFrame
         ch_convert.setBounds(150, 200, 230, 22);
 
         ch_transpose = new JCheckBox("Transpose (rotate) dataset from rows to columns or vice versa");
-        ch_transpose.setBounds(150, 230, 380, 22);
+        ch_transpose.setBounds(150, 230, 420, 22);
 
         btn_save = new JButton("Save file...");
-        btn_save.setBounds(140, 310, 90, 25);
+        btn_save.setBounds(160, 310, 100, 25);
         btn_save.setEnabled(false);
         btn_save.addActionListener(this);
 
         btn_close = new JButton("Close");
-        btn_close.setBounds(250, 310, 90, 25);
+        btn_close.setBounds(280, 310, 100, 25);
         btn_close.addActionListener(this);
 
         add(panel_about);
@@ -154,7 +154,7 @@ public class PreprocessPanel extends JFrame
         add(btn_close);
 
         setLayout(null);
-        setSize(520, 385);
+        setSize(570, 385);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setIconImage(new ImageIcon(getClass().getResource("/unifeat/gui/icons/small_logo.png")).getImage());
