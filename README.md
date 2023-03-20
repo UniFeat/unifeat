@@ -7,6 +7,7 @@
  ----
 [![GitHub stars](https://img.shields.io/github/stars/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/network)
+[![DOI:10.1016/j.neucom.2023.03.037](https://zenodo.org/badge/DOI/10.1016/j.neucom.2023.03.037.svg)](https://doi.org/10.1016/j.neucom.2023.03.037)
 [![GitHub license](https://img.shields.io/github/license/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/blob/main/LICENSE)
 
 [**User Manual**](https://unifeat.github.io/docs/user_manual_v1.1.pdf) |
@@ -15,6 +16,23 @@
 The **Uni**versal **Feat**ure Selection Tool (UniFeat) is an open-source tool developed entirely in Java for performing feature selection process in different areas of research. The project aims to create a unified framework for researchers applying feature selection.
 
 UniFeat provides a set of well-known and state-of-the-art feature selection methods within the essential auxiliary tools, including performance evaluation criteria, visual displays, statistical analysis, and reduced datasets to compare the performance of feature selection methods.
+
+## Citation
+Sina Tabakhi and Parham Moradi, [**Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction**](https://doi.org/10.1016/j.neucom.2023.03.037), Neurocomputing, 2023.
+
+If you find this repository useful, please cite our paper:
+```
+@article{tabakhi2023unifeat,
+ title     = {Universal feature selection tool (UniFeat): An open-source tool for dimensionality reduction},
+ author    = {Tabakhi, Sina and Moradi, Parham},
+ journal   = {Neurocomputing},
+ year      = {2023},
+ publisher = {Elsevier},
+ doi       = {10.1016/j.neucom.2023.03.037}
+}
+```
+
+
 
 ## Objectives
 Our aim in the development of UniFeat as a comprehensive feature selection tool includes six aspects. 
