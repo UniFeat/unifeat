@@ -18,7 +18,7 @@ The **Uni**versal **Feat**ure Selection Tool (UniFeat) is an open-source tool de
 UniFeat provides a set of well-known and state-of-the-art feature selection methods within the essential auxiliary tools, including performance evaluation criteria, visual displays, statistical analysis, and reduced datasets to compare the performance of feature selection methods.
 
 ## Citation
-Sina Tabakhi and Parham Moradi, [**Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction**](https://doi.org/10.1016/j.neucom.2023.03.037), Neurocomputing, 2023.
+Sina Tabakhi and Parham Moradi, [**Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction**](https://doi.org/10.1016/j.neucom.2023.03.037), Neurocomputing, Vol. 535, pp. 156-165, 2023.
 
 If you find this repository useful, please cite our paper:
 ```
@@ -27,6 +27,8 @@ If you find this repository useful, please cite our paper:
  author    = {Tabakhi, Sina and Moradi, Parham},
  journal   = {Neurocomputing},
  year      = {2023},
+ volume    = {535},
+ pages     = {156-165},
  publisher = {Elsevier},
  doi       = {10.1016/j.neucom.2023.03.037}
 }
