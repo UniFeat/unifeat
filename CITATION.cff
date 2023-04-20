@@ -22,7 +22,6 @@ preferred-citation:
     orcid: "https://orcid.org/0000-0002-5604-565X"
   doi: "10.1016/j.neucom.2023.03.037"
   journal: "Neurocomputing"
-  month: 5
   start: 156
   end: 165
   title: "Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction"
