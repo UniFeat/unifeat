@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Tabakhi"
+  given-names: "Sina"
+  orcid: "https://orcid.org/0000-0002-3075-7907"
+- family-names: "Moradi"
+  given-names: "Parham"
+  orcid: "https://orcid.org/0000-0002-5604-565X"
+title: "Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction"
+version: 0.1.1
+doi: 10.1016/j.neucom.2023.03.037
+url: "https://unifeat.github.io/"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Tabakhi"
+    given-names: "Sina"
+    orcid: "https://orcid.org/0000-0002-3075-7907"
+  - family-names: "Moradi"
+    given-names: "Parham"
+    orcid: "https://orcid.org/0000-0002-5604-565X"
+  doi: "10.1016/j.neucom.2023.03.037"
+  journal: "Neurocomputing"
+  month: 5
+  start: 156
+  end: 165
+  title: "Universal Feature Selection Tool (UniFeat): An Open-Source Tool for Dimensionality Reduction"
+  volume: 535
+  year: 2023
+  url: "https://doi.org/10.1016/j.neucom.2023.03.037"
