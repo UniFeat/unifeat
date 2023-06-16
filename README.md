@@ -8,6 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/network)
 [![DOI:10.1016/j.neucom.2023.03.037](https://zenodo.org/badge/DOI/10.1016/j.neucom.2023.03.037.svg)](https://doi.org/10.1016/j.neucom.2023.03.037)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8046034.svg)](https://doi.org/10.5281/zenodo.8046034)
 [![GitHub license](https://img.shields.io/github/license/UniFeat/unifeat)](https://github.com/UniFeat/unifeat/blob/main/LICENSE)
 
 [**User Manual**](https://unifeat.github.io/docs/user_manual_v1.1.pdf) |
